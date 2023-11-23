@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "llm4kg"
+version = "0.1.0"
+description = "Framework and task collection for automated benchmarking of Large Language Modells (LLMs) on Knowledge Graph (KG) related tasks."
+authors = ["Your Name <you@example.com>"]
+license = "MPL-2.0"
+readme = "README.md"
+packages = [{include = "llm4kg_mapping"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^0.28.1"
+transformers = "^4.34.0"
+torch = "^2.1.0"
+accelerate = "^0.23.0"
+pyspark = "^3.5.0" 
+rdflib = "^7.0.0"
+# seaborn = "^0.13.0"
+#python3 -m llama_cppserver
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+llm4kg_mapping = "llm4kg_mapping.run:run"
