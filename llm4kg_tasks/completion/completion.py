@@ -21,3 +21,6 @@ class Synonym:
 
         synonyms = [choice['text'].strip() for choice in response.choices]
         return synonyms
+
+
+print(Synonym("","gpt-3").get_synonyms("runtimeMinutes"))
