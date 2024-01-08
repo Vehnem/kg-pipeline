@@ -1,4 +1,17 @@
+# KG-Pipeline Suite
 
+(Autoamtic Benchmark-driven )
+
+This repository contains a plethora of tools, scripts and snippets to build knowledge graphs
+
+## Structure 
+
+- **core** - contains core components
+- **benchmark** - contains benchmarking and evaluation
+- **dataset** - contains dataset processing
+- **tasks** - implementations of single KGC tasks
+
+## Dependencies
 
 https://platform.openai.com/docs/models
 

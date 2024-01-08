@@ -2,7 +2,8 @@ data/
 scratch/
 tools/
 examples/
-
+config.yaml
+poetry.lock
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
