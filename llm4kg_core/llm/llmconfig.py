@@ -21,5 +21,7 @@ class LLMConfig:
         """
         with open(self.config_file) as f:
             config = yaml.load(f, Loader=yaml.FullLoader)
-            self.openai_key = config["openai_key"]
-            self.not_used = config["not_used"]
+            self.openai_key = config["openai"]["key"]
+            self.not_used = config.get("not_used",None)
+            self.data = config.get("data",None)
+            

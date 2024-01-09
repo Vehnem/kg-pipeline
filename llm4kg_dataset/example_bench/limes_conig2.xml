@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LIMES>
+    <PREFIX>
+        <NAMESPACE>http://xmlns.com/foaf/0.1/</NAMESPACE>
+        <LABEL>foaf</LABEL>
+    </PREFIX>
+    <PREFIX>
+        <NAMESPACE>http://schema.org/</NAMESPACE>
+        <LABEL>schema</LABEL>
+    </PREFIX>
+    <SOURCE id="source1">
+        <FILE>/home/user/foaf-dataset.nt</FILE>
+        <VAR>?x</VAR>
+        <PAGESIZE>1000</PAGESIZE>
+        <RESTRICTION>?x a foaf:Person</RESTRICTION>
+        <PROPERTY>foaf:name</PROPERTY>
+        <PROPERTY>foaf:mbox</PROPERTY>
+    </SOURCE>
+    <TARGET id="target1">
+        <ENDPOINT>http://example.org/schema-dataset</ENDPOINT>
+        <VAR>?y</VAR>
+        <PAGESIZE>1000</PAGESIZE>
+        <RESTRICTION>?y a schema:Person</RESTRICTION>
+        <PROPERTY>schema:name</PROPERTY>
+        <PROPERTY>schema:email</PROPERTY>
+    </TARGET>
+    <METRIC>
+        lowerCase(trigrams(?x/foaf:name), trigrams(?y/schema:name)) &gt;= 0.9
+    </METRIC>
+    <ACCEPTANCE>
+        <THRESHOLD>0.9</THRESHOLD>
+        <FILE>accepted.nt</FILE>
+        <RELATION>owl:sameAs</RELATION>
+    </ACCEPTANCE>
+    <REVIEW>
+        <THRESHOLD>0.7</THRESHOLD>
+        <FILE>reviewme.nt</FILE>
+    </REVIEW>
+    <EXECUTION>
+        <RESTART>false</RESTART>
+        <PLANNER>Dynamic</PLANNER>
+        <ENGINE>Default</ENGINE>
+    </EXECUTION>
+    <OUTPUT>
+        <FORMAT>N3</FORMAT>
+        <FILE>output.nt</FILE>
+    </OUTPUT>
+</LIMES>

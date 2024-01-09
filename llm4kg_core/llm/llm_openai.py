@@ -4,7 +4,7 @@ from openai import openai
 
 class OpenAIAPIConnector:
     """
-    Connects to the OpenAI API and generates RML mappings for a given CSV snippet
+    
     """
 
     __config__ = None

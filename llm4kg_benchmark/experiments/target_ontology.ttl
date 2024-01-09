@@ -1,0 +1,53 @@
+PREFIX dbo: <http://dbpedia.org/ontology>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+# Person
+
+dbo:Person a owl:Class .
+
+dbo:name a owl:DatatypeProperty ;
+    rdf:domain dbo:Person .
+
+dbo:birthYear a owl:DatatypeProperty ;
+    rdf:domain dbo:Person .
+
+dbo:deathYear a owl:DatatypeProperty ;
+    rdf:domain dbo:Person .
+
+dbo:profession a owl:ObjectProperty ;
+    range:domain dbo:Person .
+
+dbo:Title a owl:DatatypeProperty ;
+    rdfs:label "Title"@en ;
+    rdfs:
+
+
+
+# Film 
+
+dbo:File a owl:Class .
+
+
+# Television
+
+dbo:Television a owl:Class .
+
+# Band
+
+dbo:Band a owl:Class .
+
+# Video
+
+dbo:Video a owl:Class .
+
+# Profession
+
+dbo:Profession a owl:Class .
+
+
+# Person (name, birthYear, deathYear, profession:Profession)
+# Film (title, year, starring:Person, genre, boxOffice)
+# Television Show (title, year, starring:Person, genre, episodes)
+# Band (name, year, member:Person, genre) 
+# Video Game (title, year, genre)
+# Profession (name)

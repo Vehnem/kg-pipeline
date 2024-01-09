@@ -1,0 +1,11 @@
+- description: 'RML1'
+  variables:
+    - ''
+  prompt: '
+  ## Instruction
+  Generate an RML mapping for dataset A to ontology O.
+
+  ## Dataset A
+
+  ## Ontology O
+  '

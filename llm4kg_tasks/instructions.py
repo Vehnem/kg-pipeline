@@ -1,3 +1,0 @@
-###Instruction Formatter###
-
-# class InstructionFormats:
