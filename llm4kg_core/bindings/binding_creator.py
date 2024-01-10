@@ -1,9 +1,21 @@
-#Init.#
+# Bindings for sub processes
 
-# import json
-# import subprocess
+from dataclasses import dataclass
+import json
+import subprocess
+from ..bindings.binding import Binding
+
+@dataclass
+class BindingConfig:
+    requirement: []
+    name: str
+
+
 # class BindingCreator:
+
 #     def __init__(self, config_file):
+
+
 #         self.config_file = config_file
 
 #     def create_bindings(self):
@@ -70,10 +82,6 @@
 #         }
 #         return rest_binding
 
-#     def execute_java_binding(self):
-#         # Logic to execute JAVA binding
-#         print("Executing JAVA binding...")
-
 #     def execute_cpp_binding(self):
 #         # Logic to execute CPP binding
 #         print("Executing CPP binding...")
@@ -81,6 +89,11 @@
 #     def execute_rest_binding(self):
 #         # Logic to execute REST binding
 #         print("Executing REST binding...")
+
+#     def execute_java_binding(self):
+#         # Logic to execute JAVA binding
+#         java_program = "path/to/java/program.jar"  # Replace with the actual path to your JAVA program
+#         subprocess.run(["java", "-jar", java_program])
 
 # # Example configuration for the join operation of Linux
 # config = {
@@ -105,17 +118,10 @@
 
 # # Execute the bindings
 # for binding in bindings:
+    
 #     print(f"Running {binding['name']} binding...")
+    
 #     binding['run']()
-#     class BindingCreator:
-#         # ...
-
-#         def execute_java_binding(self):
-#             # Logic to execute JAVA binding
-#             java_program = "path/to/java/program.jar"  # Replace with the actual path to your JAVA program
-#             subprocess.run(["java", "-jar", java_program])
-
-#     # ...
 
 #     # Example configuration for the join operation of Linux
 #     config = {
