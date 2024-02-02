@@ -1,0 +1,22 @@
+@prefix schema: <http://schema.org/> .
+
+<http://example.org/person123>
+    a schema:Person ;
+    schema:name "Alice Smith" ;
+    schema:email "alice.smith@example.org" ;
+    schema:colleague <http://example.org/person456> ;
+    schema:birthDate "1993-01-01" .
+
+<http://example.org/person234>
+    a schema:Person ;
+    schema:name "Bob Johnson" ;
+    schema:email "bob.johnson@example.org" ;
+    schema:colleague <http://example.org/person123> ;
+    schema:birthDate "1984-05-20" .
+
+<http://example.org/person456>
+    a schema:Person ;
+    schema:name "Carol Davis" ;
+    schema:email "carol.davis@example.org" ;
+    schema:colleague <http://example.org/person234> ;
+    schema:birthDate "1989-02-15" .

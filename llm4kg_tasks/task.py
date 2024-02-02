@@ -2,10 +2,19 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
-class DiTask(ABC):
+class Task(ABC):
     """
     This abstract class represents a generic data integration task
     """
+
+    def __init__(self, config):
+        """
+        Constructor for the Task class
+        :param name: the name of the task
+        :param description: the description of the task
+        """
+        self.name = config['name']
+        self.description = config['description']
 
     @abstractmethod
     def run(self):
@@ -14,6 +23,7 @@ class DiTask(ABC):
         Each subclass must provide its own implementation for this method.
         """
 
+<<<<<<< HEAD
 @dataclass
 class Task(ABC):
     """
@@ -40,3 +50,5 @@ class Task(ABC):
         Abstract method representing the action of running the task.
         Each subclass must provide its own implementation for this method.
         """
+=======
+>>>>>>> c4f1e612f2a91db97e3d276ec1cd381e143127c0

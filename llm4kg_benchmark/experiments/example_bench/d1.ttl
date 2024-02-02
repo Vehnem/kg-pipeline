@@ -1,0 +1,23 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://example.org/person123>
+    a foaf:Person ;
+    foaf:name "Alice Smith" ;
+    foaf:age "30" ;
+    foaf:mbox <mailto:alice.smith@example.org> ;
+    foaf:knows <http://example.org/person456> .
+
+<http://example.org/person234>
+    a foaf:Person ;
+    foaf:name "Bob Johnson" ;
+    foaf:age "40" ;
+    foaf:mbox <mailto:bob.johnson@example.org> ;
+    foaf:knows <http://example.org/person123> .
+
+<http://example.org/person456>
+    a foaf:Person ;
+    foaf:name "Carol Davis" ;
+    foaf:age "35" ;
+    foaf:mbox <mailto:carol.davis@example.org> ;
+    foaf:knows <http://example.org/person234> .
+

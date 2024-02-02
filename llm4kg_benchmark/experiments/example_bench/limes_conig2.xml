@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE LIMES SYSTEM "limes.dtd">
+<LIMES>
+    <PREFIX>
+        <NAMESPACE>http://xmlns.com/foaf/0.1/</NAMESPACE>
+        <LABEL>foaf</LABEL>
+    </PREFIX>
+    <PREFIX>
+        <NAMESPACE>http://schema.org/</NAMESPACE>
+        <LABEL>schema</LABEL>
+    </PREFIX>
+    <PREFIX>
+        <NAMESPACE>http://www.w3.org/1999/02/22-rdf-syntax-ns#</NAMESPACE>
+        <LABEL>rdf</LABEL>
+    </PREFIX>
+    <PREFIX>
+        <NAMESPACE>http://www.w3.org/2002/07/owl#</NAMESPACE>
+        <LABEL>owl</LABEL>
+    </PREFIX>
+    <SOURCE>
+        <ID>source1</ID>
+        <ENDPOINT>/home/marvin/src/kg-pipeline/llm4kg_benchmark/experiments/example_bench/d1.ttl</ENDPOINT>
+        <VAR>?x</VAR>
+        <PAGESIZE>1000</PAGESIZE>
+        <RESTRICTION>?x rdf:type foaf:Person</RESTRICTION>
+        <PROPERTY>foaf:name</PROPERTY>
+        <TYPE>TURTLE</TYPE>
+    </SOURCE>
+    <TARGET>
+        <ID>target1</ID>
+        <ENDPOINT>/home/marvin/src/kg-pipeline/llm4kg_benchmark/experiments/example_bench/d2.ttl</ENDPOINT>
+        <VAR>?y</VAR>
+        <PAGESIZE>1000</PAGESIZE>
+        <RESTRICTION>?y rdf:type schema:Person</RESTRICTION>
+        <PROPERTY>schema:name</PROPERTY>
+        <TYPE>TURTLE</TYPE>
+    </TARGET>
+    <METRIC>
+        trigrams(x.foaf:name, y.schema:name)
+    </METRIC>
+    <ACCEPTANCE>
+        <THRESHOLD>0.98</THRESHOLD>
+        <FILE>accepted.nt</FILE>
+        <RELATION>owl:sameAs</RELATION>
+    </ACCEPTANCE>
+    <REVIEW>
+        <THRESHOLD>0.95</THRESHOLD>
+        <FILE>reviewme.nt</FILE>
+        <RELATION>owl:sameAs</RELATION>
+    </REVIEW>
+</LIMES>

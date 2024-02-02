@@ -1,0 +1,20 @@
+- description: 'Sample Titanic properties for mapping'
+  query: '
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT ?a ?aLabel (SAMPLE(?obj) as ?obj) (SAMPLE(?objLabel) as ?objLabel) 
+WHERE {
+  wd:Q44578 ?pred ?obj .
+  ?a wikibase:directClaim ?pred  .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en" .
+  }
+  OPTIONAL { ?obj rdfs:label ?objLabel FILTER ( lang(?objLabel) = "en") }
+} GROUP BY ?a ?aLabel
+'
+- description: 'Test'
+  query: 'PREFIX wd: <http://www.wikidata.org/entity/>'

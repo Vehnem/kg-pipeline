@@ -1,2 +1,0 @@
-###OpenAI API connector###
-

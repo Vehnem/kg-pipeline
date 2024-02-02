@@ -5,7 +5,7 @@ description = "Framework and task collection for automated benchmarking of Large
 authors = ["Your Name <you@example.com>"]
 license = "MPL-2.0"
 readme = "README.md"
-packages = [{include = "llm4kg_mapping"}]
+packages = [{include = "llm4kg_tests"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -14,14 +14,22 @@ transformers = "^4.34.0"
 torch = "^2.1.0"
 accelerate = "^0.23.0"
 pyspark = "^3.5.0" 
-# rdflib = "7.0.0"
-# seaborn = "^0.13.0"
-#python3 -m llama_cppserver
+pyyaml = "^6.0.1"
+pytest = "^7.4.4"
+jsonlines = "^4.0.0"
+rdflib = "^7.0.0"
+pyrml = "^0.5.1"
+sparqlwrapper = "^2.0.0"
+wptools = "^0.4.17"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
+<<<<<<< HEAD
 llm4kg_mapping = "llm4kg_mapping.run:run"
 config_test = "llm4kg_core.config:run"
+=======
+# llm4kg_mapping = "llm4kg_mapping.run:run"
+>>>>>>> c4f1e612f2a91db97e3d276ec1cd381e143127c0

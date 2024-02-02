@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Data Integration & Knowledge Graphs
 
 **Summary**
@@ -22,20 +23,46 @@ IMDB
 
 - generate samples for coding
 
+=======
+# KG-Pipeline Suite
+>>>>>>> c4f1e612f2a91db97e3d276ec1cd381e143127c0
 
+(Autoamtic Benchmark-driven )
 
-https://platform.openai.com/docs/models
+This repository contains a plethora of tools, scripts and snippets to build knowledge graphs
+
+## Structure 
+
+- **core** - contains core components
+- **benchmark** - contains benchmarking and evaluation
+- **dataset** - contains dataset processing
+- **tasks** - implementations of single KGC tasks
+
+## Dependencies
+
+Listing of used dependecies and their licencing
+
+- pyyaml - read yaml config files
+- rdflib -
+- pyspark - 
 
 ## Slefhost APIs
 https://github.com/marella/ctransformers
 https://github.com/abetlen/llama-cpp-python is very good
+https://platform.openai.com/docs/models
 
-## Python-LLAMMA-cpp is working good
+python llama cpp
 
-## Datasets
+## Related Work/Repos ##
 
-sudo apt install libcurl4-openssl-dev libssl-dev
+https://github.com/HazyResearch/fm_data_tasks
+>
 
+https://aclanthology.org/2023.bionlp-1.37/
+>
+
+https://github.com/zjunlp/AutoKG
+> the autokg project is a mutli agent llm driven knowledge graph extraction pipeline
 
 ## Backlog
 
@@ -54,19 +81,6 @@ https://huggingface.co/docs/transformers/training#train
 https://github.com/ChuloAI/BrainChulo
 - finetuning with python
 
-## Prompts
-- Lets think Step by Step
-
-```
-Summary of the task
-
-Question:
-Answer:
-Question:
-```
-
-Prompt Formats
-
 
 ## Tools
 
@@ -77,17 +91,19 @@ https://github.com/srush/MiniChain
 https://cobusgreyling.medium.com/langchain-creating-large-language-model-llm-applications-via-huggingface-192423883a74
 
 
-## Open LLMs 
+## LLMs 
+
+- OpenAI GPT 4
+- OpenAI GPT 3.5
+- LLAMA 
+- Claude
+
 
 https://github.com/antimatter15/alpaca.cpp
-
 https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
 
-## Related Work/Repos ##
 
-https://github.com/HazyResearch/fm_data_tasks
-
-https://aclanthology.org/2023.bionlp-1.37/
+<h1 style="color:red;">Miscellaneous</h1>
 
 ## Logs
 

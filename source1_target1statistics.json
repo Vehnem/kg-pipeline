@@ -1,0 +1,23 @@
+{
+	"mappingTime" : 21,
+	"inputSizes" : {
+		"source" : 3,
+		"target" : 3
+	},
+	"outputSizes" : {
+		"verification" : 0,
+		"acceptance" : 3
+	},
+	"pseudoPRF" : {
+		"acceptance" : {
+			"precision" : 1.0,
+			"recall" : 1.0,
+			"f-measure" : 1.0
+		},
+		"all" : {
+			"precision" : 1.0,
+			"recall" : 1.0,
+			"f-measure" : 1.0
+		}
+	}
+}
