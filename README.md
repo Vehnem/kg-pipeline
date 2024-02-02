@@ -1,3 +1,27 @@
+# Data Integration & Knowledge Graphs
+
+**Summary**
+- 
+
+**Structure**
+- **llm4kg_core** - core components of the framework
+- **llm4kg_tasks** - boilerplate code to modularize exisiting construction tools
+- **llm4kg_bench** - benchmarking suite for the construction process
+
+What do I need
+- M1: I need to generate the example benchmark data from Wikipedia, DBpedia, Wikidata, IMDB
+- M2: I need to write prompts for the tasks
+- M3: I need to write an API to execute the tasks
+
+
+# Milestone 1
+
+- get all possible raw data and store on a server
+
+IMDB
+
+- generate samples for coding
+
 
 
 https://platform.openai.com/docs/models

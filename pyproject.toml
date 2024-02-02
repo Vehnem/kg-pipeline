@@ -24,3 +24,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 llm4kg_mapping = "llm4kg_mapping.run:run"
+config_test = "llm4kg_core.config:run"

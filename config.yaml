@@ -1,0 +1,105 @@
+
+# openai specific config
+openai:
+  api-key: 'foo'
+
+# dataset acquisition
+input:
+  - name: imdb
+    url: DBpedia 
+
+
+# llm parameter
+llm:
+  temperature: 0.0
+  top_p: 0.0
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  stop: []
+  logprobs: 0
+  echo: false
+  stream: false
+  best_of: 0
+  n: 0
+  logit_bias: {}
+  return_prompt: false
+  return_metadata: false
+  return_logprobs: false
+  return_tokens: false
+  return_full_text: false
+  return_choices: false
+  return_intermediate_results: false
+  return_html: false
+  return_html_prefix: ''
+  return_html_suffix: ''
+  return_html_wrap_with_model_tag: false
+  return_html_add_trailing_newline: false
+
+
+task:
+  - name: ''
+    description: ''
+    prompt: ''
+    examples: []
+    completion: ''
+    max_tokens: 0
+    temperature: 0.0
+    top_p: 0.0
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
+    stop: []
+    logprobs: 0
+    echo: false
+    stream: false
+    best_of: 0
+    n: 0
+    logit_bias: {}
+    return_prompt: false
+    return_metadata: false
+    return_logprobs: false
+    return_tokens: false
+    return_full_text: false
+    return_choices: false
+    return_intermediate_results: false
+    return_html: false
+    return_html_prefix: ''
+    return_html_suffix: ''
+    return_html_wrap_with_model_tag: false
+    return_html_add_trailing_newline: false
+    return_html_input_prefix: ''
+    return_html_input_suffix: ''
+    return_html_output_prefix: ''
+    return_html_output_suffix: ''
+    return_html_classes: []
+    return_html_title: ''
+    return_html_css: ''
+    return_html_js: ''
+    return_html_loading_model_text: ''
+    return_html_loading_model_css: ''
+    return_html_loading_model_js: ''
+    return_html_async: false
+    return_html_input_wrap: false
+    return_html_output_wrap: false
+    return_html_strip_input_prompt: false
+    return_html_strip_output_prompt: false
+    return_html_strip_prompt: false
+    return_html_strip_response: false
+    return_html_strip_trailing_newlines: false
+    return_html_strip_trailing_whitespace: false
+    return_html_strip_whitespace: false
+    return_html_strip_empty_lines: false
+    return_html_strip_lines: false
+    return_html_strip_all_lines: false
+    return_html_strip_all_tags: false
+    return_html_strip_tags: []
+    return_html_strip_tag: ''
+    return_html_strip_style: false
+    return_html_strip_scripts: false
+    return_html_strip_comments: false
+    return_html_strip_unknown_tags: false
+    return_html_strip_unknown_tags_with_content: false
+    return_html_strip_unknown_tags_with_attributes: false
+    return_html_strip_unknown_tags_with_attributes_and_content: false
+    return_html_strip_unknown_tags_with_attributes_and_content_with_content: false
+    return_html_strip_unknown_tags_with_attributes_and_content_with_attributes: false
+    return_html_strip_unknown: false
