@@ -21,15 +21,13 @@ rdflib = "^7.0.0"
 pyrml = "^0.5.1"
 sparqlwrapper = "^2.0.0"
 wptools = "^0.4.17"
+schema = "^0.7.5"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-<<<<<<< HEAD
-llm4kg_mapping = "llm4kg_mapping.run:run"
 config_test = "llm4kg_core.config:run"
-=======
 # llm4kg_mapping = "llm4kg_mapping.run:run"
->>>>>>> c4f1e612f2a91db97e3d276ec1cd381e143127c0
+
