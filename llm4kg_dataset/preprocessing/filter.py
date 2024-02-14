@@ -50,6 +50,10 @@ class Filter(object):
             header = next(reader)
             return header
     # Filter().join("data/examples/imdb/.csv", "data/formaterUrl.csv", "id").show()
+        
+
+    def predicate_filter(self, filter):
+        pass
 
     
 Filter().normalize_csv_file("/home/marvin/src/llm4kg/data/examples/imdb/Q44578/name.basics.tsv").show()

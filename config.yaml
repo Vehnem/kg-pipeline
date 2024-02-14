@@ -1,7 +1,22 @@
 
 # openai specific config
 openai:
-  api-key: 'foo'
+  api-key: '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'
+
+bindigs:
+  - id: rml-mapper-java
+    description: Java RMLMapper
+    command: '/home/marvin/.sdkman/candidates/java/current/bin/java -jar /home/marvin/workspace/code/rmlmapper-java/target/rmlmapper-6.5.1-r0-all.jar'
+  - id: limes
+    description: LIMES
+    command: 'java -jar /home/marvin/workspace/code/limes/limes.jar'
+  - id: agreement-maker
+    description: Agreement Maker
+    command: 'java -jar /home/marvin/workspace/code/agreement-maker/agreement-maker.jar'
+  - id: paris
+    description: Paris
+    command: 'java -jar /home/marvin/workspace/code/paris/paris.jar'
+
 
 # dataset acquisition
 input:

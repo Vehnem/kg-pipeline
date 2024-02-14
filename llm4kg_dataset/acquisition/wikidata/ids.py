@@ -49,6 +49,20 @@ class IdExtractorDBpeia:
         pass
         
 
+    def __get_node():
+        pass
+
+
+    def __get_namespace(iri: str) -> str:
+        return iri.split('/')[2]
+    
+
+    def get_sameas_namespaces(self) -> List[str]:
+        res: RDD = self.rdd.map(lambda row: IdExtractorDBpeia.__get_namespace(row[2]))
+        
+        print(res.distinct().collect())
+        pass
+
 
     def extract_for_type(self, type: str) -> List[str]:
         pass

@@ -17,11 +17,13 @@ pyspark = "^3.5.0"
 pyyaml = "^6.0.1"
 pytest = "^7.4.4"
 jsonlines = "^4.0.0"
-rdflib = "^7.0.0"
-pyrml = "^0.5.1"
+#rdflib = "^7.0.0"
+rdflib = "^6.2.0"
 sparqlwrapper = "^2.0.0"
 wptools = "^0.4.17"
 schema = "^0.7.5"
+pyrml = {git = "ssh://git@github.com/anuzzolese/pyrml.git"}
+pymongo = "^4.6.1"
 
 [build-system]
 requires = ["poetry-core"]

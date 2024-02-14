@@ -14,4 +14,9 @@ def test_sparql_all_data():
         """)
     print(len(sparql_results))
     
-test_sparql_all_data()
+def test_draft():
+    spark = SparkSession.builder.appName("IdExtractorDBpeia").getOrCreate()
+    sc = spark.sparkContext
+
+    # Load the text file into an RDD
+    self.rdd = sc.textFile(config['sameas-external']).map(lambda line: line.split(' ',3))
