@@ -1,57 +1,53 @@
+#
+# config.yaml for kg-pipeline
+#
 
-# openai specific config
+
+# openai (gpt) specific config
 openai:
-  api-key: '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'
+  api-key: # or ENV('OPENAI_API_KEY') 
 
+
+# anthropic (claude) specific config
+anthropic:
+  api-key: # or ENV('ANTHROPIC_API_KEY')
+
+
+# configuration of external tools
 bindigs:
   - id: rml-mapper-java
     description: Java RMLMapper
-    command: '/home/marvin/.sdkman/candidates/java/current/bin/java -jar /home/marvin/workspace/code/rmlmapper-java/target/rmlmapper-6.5.1-r0-all.jar'
+    command: 'java -jar ./tools/rmlmapper.jar'
   - id: limes
     description: LIMES
-    command: 'java -jar /home/marvin/workspace/code/limes/limes.jar'
-  - id: agreement-maker
-    description: Agreement Maker
-    command: 'java -jar /home/marvin/workspace/code/agreement-maker/agreement-maker.jar'
-  - id: paris
-    description: Paris
-    command: 'java -jar /home/marvin/workspace/code/paris/paris.jar'
+    command: 'java -jar ./tools/limes.jar'
 
 
-# dataset acquisition
-input:
-  - name: imdb
-    url: DBpedia 
-
-
-# llm parameter
-llm:
-  temperature: 0.0
-  top_p: 0.0
-  frequency_penalty: 0.0
-  presence_penalty: 0.0
-  stop: []
-  logprobs: 0
-  echo: false
-  stream: false
-  best_of: 0
-  n: 0
-  logit_bias: {}
-  return_prompt: false
-  return_metadata: false
-  return_logprobs: false
-  return_tokens: false
-  return_full_text: false
-  return_choices: false
-  return_intermediate_results: false
-  return_html: false
-  return_html_prefix: ''
-  return_html_suffix: ''
-  return_html_wrap_with_model_tag: false
-  return_html_add_trailing_newline: false
-
-
-task:
+# NOTES: List of OEPNAI AI parameter
+llm_params:
+  - temperature: 0.0
+    top_p: 0.0
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
+    stop: []
+    logprobs: 0
+    echo: false
+    stream: false
+    best_of: 0
+    n: 0
+    logit_bias: {}
+    return_prompt: false
+    return_metadata: false
+    return_logprobs: false
+    return_tokens: false
+    return_full_text: false
+    return_choices: false
+    return_intermediate_results: false
+    return_html: false
+    return_html_prefix: ''
+    return_html_suffix: ''
+    return_html_wrap_with_model_tag: false
+    return_html_add_trailing_newline: false
   - name: ''
     description: ''
     prompt: ''

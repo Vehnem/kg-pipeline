@@ -4,6 +4,7 @@ tools/
 examples/
 config.yaml
 poetry.lock
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

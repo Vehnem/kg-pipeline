@@ -1,0 +1,26 @@
+<#ArtistMapping> a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "./llm4kg_tests/examples/rml/test.csv" ;
+    rml:referenceFormulation ql:CSV
+  ];
+  
+  rr:subjectMap [
+    rr:template "http://artists.example.com/{id}";
+    rr:class example:Person ;
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate example:name;
+    rr:objectMap [
+      rml:reference "name";
+      rr:datatype xsd:string
+      ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate example:age;
+    rr:objectMap [
+      rml:reference "age";
+      rr:datatype xsd:int
+    ]
+  ];

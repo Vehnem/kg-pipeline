@@ -1,11 +1,12 @@
 import openai
 ###Completion Tasks###
 
-class Synonym:
+class LLMSynonymCompletion:
     def __init__(self, api_key, model_name):
         openai.api_key = api_key
         self.model_name = model_name
 
+    # TODO new api
     def get_synonyms(self, word):
         response = openai.Completion.create(
             engine=self.model_name,
@@ -21,6 +22,3 @@ class Synonym:
 
         synonyms = [choice['text'].strip() for choice in response.choices]
         return synonyms
-
-
-print(Synonym("","gpt-3").get_synonyms("runtimeMinutes"))

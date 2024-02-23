@@ -1,6 +1,7 @@
 from functools import wraps
 from abc import ABC, abstractmethod
 from pymongo import MongoClient
+from .hash import Sha512Hash
 
 class Cache(ABC):
     @abstractmethod
@@ -46,11 +47,14 @@ class CacheDecorator:
     def cached(self, func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            key = str((args, frozenset(kwargs.items())))
-            result = self.cache.get(key)
-            if result is None:
+            key = Sha512Hash(str((args, frozenset(kwargs.items()))))
+            record = self.cache.get({'_id': key})
+            if record is None:
+                print("result is none")
                 result = func(*args, **kwargs)
-                self.cache.set(key, result)
-            return result
+                self.cache.set({'_id': key, 'result': result})
+                return result
+            else:
+               return record['result']
         
         return wrapper

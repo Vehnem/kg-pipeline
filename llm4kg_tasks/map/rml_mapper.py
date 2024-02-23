@@ -45,9 +45,9 @@ class RMLMapperJavaImpl:
 
     def apply_mapping(self, mapping_path, output_path):
         stdout = subprocess.call([
-            '/home/marvin/.sdkman/candidates/java/current/bin/java', 
+            'java', 
             '-jar', 
-            '/home/marvin/workspace/code/rmlmapper-java/target/rmlmapper-6.5.1-r0-all.jar',
+            'tools/rmlmapper.jar',
             '-m',
             mapping_path
             ])

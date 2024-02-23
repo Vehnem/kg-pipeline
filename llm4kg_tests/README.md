@@ -1,6 +1,6 @@
 # Unit and Integration Tests
 
-## Run 
+## Run Tests
 
 ```
 pytest

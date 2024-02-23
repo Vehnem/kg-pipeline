@@ -1,0 +1,4 @@
+id,name,age,profession
+01,Bob,25,Musician|Dancer
+02,Alice,30,Musician|Developer
+02,Alice,30,Musician|Developer|Producer

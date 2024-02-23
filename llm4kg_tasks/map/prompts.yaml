@@ -1,11 +1,16 @@
-- description: 'RML1'
-  variables:
-    - ''
+- description: 'RML'
   prompt: '
-  ## Instruction
+  ### Instruction
   Generate an RML mapping for dataset A to ontology O.
 
-  ## Dataset A
+  ### CSV
+  {{CSV}}
 
-  ## Ontology O
+  ### Ontology 
+  {{Ontology}}
+  '
+- description: 'RML'
+  prompt: '
+  ## Instruction
+  Generate an RML mapping for dataset A to dataset B.
   '

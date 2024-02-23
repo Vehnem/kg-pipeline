@@ -1,4 +1,0 @@
-openai:
-  key: "1234"
-# data: "../kg-pipeline-data"
-data: ./target

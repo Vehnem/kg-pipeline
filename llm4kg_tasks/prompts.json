@@ -1,6 +1,0 @@
-{
-    "rml": {
-        "Given the dataset A and ontlogy O. Generate an RML mappings that maps A to 0",
-        "variables": "A, O"
-    }
-}

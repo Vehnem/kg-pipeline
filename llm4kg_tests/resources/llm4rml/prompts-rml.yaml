@@ -1,0 +1,67 @@
+- id: 'simple-rml-csv'
+  description: 'Simple RML mapping template CSV'
+  variables: 
+    - CSV
+    - Ontology
+  prompt: '
+  ## Instruction
+  FoR the following CSV and Ontology generate an RML mapping from the CSV to the Ontology.
+
+  ## CSV
+  {{CSV}}
+
+  ## Ontology
+  {{Ontology}}
+  '
+- id: 'simple-rml-json'
+  description: 'Simple RML mapping template JSON'
+  variables:
+    - JSON
+    - Ontology
+  prompt: '
+  ## Instruction
+  For the following CSV and Ontology generate an RML mapping from the CSV to the Ontology.
+
+  ## CSV
+  {{CSV}}
+
+  ## Ontology
+  {{Ontology}}
+  '
+- id: 'development'
+  description: 'Current'
+  variables:
+    - RML-ONTO
+    - TGT-ONTO
+    - JSON
+  prompt: '
+  You are a helpful assistant that provides full RML mappings in turtle format that aim to convert an input dataset (given a sample from the user) into RDF using the stored DBpedia movie ontology as mapping target. Map as much information as fine-grained as possible w.r.t. the target ontology, by identifying the best matches for classes, properties and only use more generic (coarse-grained) classes/properties from the target ontology when there are no better matches. Take the domain and range definitions of properties into account and use RML (builtin only) transformation functions to convert input into expected output datatype.
+  You can retrieve information about domain and ranges from the stored target ontology and about RML language elements and functions from the different stored RML ontology modules to make sure the mapping is syntactically and semantically correct and can be automatically processed.
+  
+  
+  ## RML Ontology
+
+  ```turtle
+  
+  {{RML-ONTO}}
+  
+  ```
+
+  
+  ## Target Ontology
+
+  ```turtle
+
+  {{TGT-ONTO}}
+
+  ```
+
+  
+  ## USER_INPUT
+  
+  ```
+  
+  {{JSON}}
+
+  ```
+  '

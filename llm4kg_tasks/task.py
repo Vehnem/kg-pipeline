@@ -23,7 +23,6 @@ class Task(ABC):
         Each subclass must provide its own implementation for this method.
         """
 
-<<<<<<< HEAD
 @dataclass
 class Task(ABC):
     """
@@ -50,5 +49,3 @@ class Task(ABC):
         Abstract method representing the action of running the task.
         Each subclass must provide its own implementation for this method.
         """
-=======
->>>>>>> c4f1e612f2a91db97e3d276ec1cd381e143127c0
