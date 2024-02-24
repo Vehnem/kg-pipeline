@@ -1,8 +1,8 @@
 ### Test OpenAI API requests ###
-import openai
-from llm4kg_core import config
+from llm4kg_core.config import Config
 from llm4kg_core.llm.oai import OpenAIModel
 
+config = Config()
 
 def test_instruct_completion():
     """tests the instruct api"""

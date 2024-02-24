@@ -6,7 +6,7 @@
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 
 
-###
+####
 # Class hierarchy
 ###
 

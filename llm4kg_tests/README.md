@@ -3,15 +3,19 @@
 ## Run Tests
 
 ```
-pytest
+poetry run pytest
 ```
 
 Run single test file
 ```
-pytest ./path/to/test.py
+poetry run pytest ./path/to/test.py
 ```
 
 Disbale capturing of stdout
 ```
-pytest -s
+poetry run pytest -s ./path/to/test.py
 ```
+
+Specify matching tests, e.g, on every test name containing util
+```
+peotry run pytest 

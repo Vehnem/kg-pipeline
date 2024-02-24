@@ -26,7 +26,6 @@ see [config.yaml](./config.yaml)
 
 ## Install
 
-
 ```
 pip install poetry
 poetry install
@@ -35,3 +34,17 @@ poetry install
 ## Execute Tests
 
 see [tests](./llm4kg_tests/README.md)
+
+## Install Remote Tools
+
+All tools will be installed under `tools` dir.
+
+
+RMLMapperJava
+```
+bash scripts/install-rmlmapperjava.sh
+```
+
+## Development Notes
+
+- Currently all resources for RML4LLM are located under `llm4kg_tests/resources/`
