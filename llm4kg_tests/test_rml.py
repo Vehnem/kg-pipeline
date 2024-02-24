@@ -8,7 +8,8 @@ from llm4kg_core.utils.cache import MongoCache, CacheDecorator
 from llm4kg_core.utils.output_parser import CodeBlockExtractor
 from llm4kg_tasks.map.rml_util import RML_Wrapper
 
-cache = MongoCache('mongodb://localhost:10000/')
+cacheImpl = MongoCache('mongodb://localhost:10000/')
+cache = CacheDecorator(cacheImpl)
 
 def test_replace_source():
     # rml_data = RML_Wrapper()
@@ -18,7 +19,7 @@ def test_replace_source():
 @cache.cached
 def __send_request(prompt: str):
     model = AnthropicModel({'api-key': config.ANTHROPIC_API_KEY})
-    response = model.generate(prompt=prompt)
+    response = model.generate(prompt=prompt,  max_tokens=4096)
     return response[0].text
 
 
@@ -34,16 +35,16 @@ def test_rml_final():
     # target_ontology.parse("data/target_ontology.ttl", format="turtle")
     # target_ontology.serialize(destination="data/target_ontology_parsed.ttl", format="turtle")
 
-    with open("data/rml-ontology_parsed.ttl", "r") as f:
+    with open("llm4kg_tests/resources/llm4rml/rml-ontology_parsed.ttl", "r") as f:
         rml_ontology = f.read()
 
-    with open("data/target_ontology_parsed.ttl", "r") as f:
+    with open("llm4kg_tests/resources/llm4rml/target_ontology_parsed.ttl", "r") as f:
         target_ontology = f.read()
 
-    with open("data/inception.json", "r") as f:
+    with open("llm4kg_tests/resources/llm4rml/inception.json", "r") as f:
         input_json = f.read()
 
-    pt = read_prompt_templates('./llm4kg_tests/prompts/prompts-rml.yaml')['development']
+    pt = read_prompt_templates('llm4kg_tests/resources/llm4rml/prompts-rml.yaml')['development']
 
     prompt = pt.build({
         'RML-ONTO': rml_ontology,
@@ -53,12 +54,17 @@ def test_rml_final():
 
     response = __send_request(prompt)
 
+    with open("data/prompt.md", "w") as md_file:
+        md_file.write(prompt)
+        print("wrote prompt to file")
+
     possible_mapping_data = CodeBlockExtractor().extract_codeblocks_from_markdown(response)
-    print(possible_mapping_data)
 
-    rml_wrapper = RML_Wrapper(possible_mapping_data)
-
-    rml_wrapper.show()
+    try:
+        possible_mapping_data = RML_Wrapper(possible_mapping_data)
+    except:
+        # print(possible_mapping_data)
+        pass
 
     # RMLMapperJavaImpl().apply_mapping(
     #     mapping_path=possible_mapping_data,

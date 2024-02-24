@@ -23,6 +23,7 @@ class MongoCache(Cache):
 
     def get(self, key):
         result = self.collection.find_one({'_id': key})
+        print(result)
         return result['result'] if result else None
 
     def set(self, key, value):
@@ -48,13 +49,12 @@ class CacheDecorator:
         @wraps(func)
         def wrapper(*args, **kwargs):
             key = Sha512Hash(str((args, frozenset(kwargs.items()))))
-            record = self.cache.get({'_id': key})
+            record = self.cache.get(key)
             if record is None:
-                print("result is none")
                 result = func(*args, **kwargs)
-                self.cache.set({'_id': key, 'result': result})
+                self.cache.set(key,result)
                 return result
             else:
-               return record['result']
+               return record
         
         return wrapper

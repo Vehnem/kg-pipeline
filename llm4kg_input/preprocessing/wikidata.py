@@ -1,18 +1,19 @@
 import json
 import xml.etree.ElementTree as ET
+from SPARQLWrapper import SPARQLWrapper
 
-tree = ET.parse('/home/marvin/src/llm4kg/data/Q31.json')
-root = tree.getroot()
+# tree = ET.parse('/home/marvin/src/llm4kg/data/Q31.json')
+# root = tree.getroot()
 
-jsonval = json.loads(root.text)
+# jsonval = json.loads(root.text)
 
-print(jsonval.keys())
+# print(jsonval.keys())
 
-print(jsonval['descriptions'])
+# print(jsonval['descriptions'])
 
-print(jsonval['sitelinks'].keys())
+# print(jsonval['sitelinks'].keys())
 
-print(json.dumps(jsonval['claims']['P3212'], indent=4))
+# print(json.dumps(jsonval['claims']['P3212'], indent=4))
 
 
 class WikidataSparqlHelper(object):
