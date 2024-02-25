@@ -14,7 +14,7 @@ anthropic:
 
 
 # configuration of external tools
-bindigs:
+bindings:
   - id: rml-mapper-java
     description: Java RMLMapper
     command: 'java -jar ./tools/rmlmapper.jar'

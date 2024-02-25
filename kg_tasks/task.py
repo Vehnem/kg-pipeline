@@ -2,6 +2,9 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
+
+#TODO what should this be?
+# - represent a single step of the pipeline
 class Task(ABC):
     """
     This abstract class represents a generic data integration task

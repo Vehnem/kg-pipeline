@@ -25,3 +25,6 @@ def test_codeblock_extractor():
     assert code_string_2 == 'print("Hello, World!")'
 
     
+def test_files():
+    print(__file__)
+    pass

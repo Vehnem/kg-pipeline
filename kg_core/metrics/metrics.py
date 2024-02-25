@@ -1,6 +1,7 @@
 #Evaluation metrics for the LLM4KG project
 
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+from rdflib import Graph
 
 # todo https://networkx.org/documentation/stable/reference/algorithms/similarity.html
 
@@ -46,19 +47,23 @@ class Metrics:
         return f1_score(y_true, y_pred)
     
 
-# # Example data
-# true_labels = [0, 1, 1, 0, 1]
-# predicted_labels = [0, 1, 0, 0, 1]
+class RDF_Similarity_Metrics:
+    """
+    Metrics to calulate the RDF similarity of the model
+    """
+    pass
 
-# # Calculate accuracy
-# accuracy = accuracy_score(true_labels, predicted_labels)
+    def __init__(self, g1: Graph, g2: Graph) -> None:
+        self.g1 = g1
+        self.g2 = g2
+        pass
 
-# # Calculate recall
-# recall = recall_score(true_labels, predicted_labels)
 
-# # Calculate F1 score
-# f1 = f1_score(true_labels, predicted_labels)
+    def precision_score(self):
+        pass
 
-# print("Accuracy:", accuracy)
-# print("Recall:", recall)
-# print("F1 Score:", f1)
+    def recall_score(self):
+        pass
+
+    def f1_score(self):
+        pass

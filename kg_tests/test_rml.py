@@ -11,10 +11,20 @@ from llm4kg_tasks.map.rml_util import RML_Wrapper
 cacheImpl = MongoCache('mongodb://localhost:10000/')
 cache = CacheDecorator(cacheImpl)
 
-def test_replace_source():
-    # rml_data = RML_Wrapper()
-    # rml_data.replace_data_source("someSource")
+def test_rmlmapperjavaimpl():
+    rml_mapper = RMLMapperJavaImpl()
+    rml_mapper.apply_mapping("llm4kg_tests/resources/rml/test.csv.rml.ttl")
     pass
+
+
+def test_replace_source():
+    graph = Graph()
+    graph.parse('llm4kg_tests/resources/rml/test.csv.rml.ttl', format="turtle")
+    rml_wrapper = RML_Wrapper(graph)
+    rml_wrapper.replace_rml_source("llm4kg_tests/resources/rml/test.json")
+    rml_wrapper.show()
+    pass
+
 
 @cache.cached
 def __send_request(prompt: str):

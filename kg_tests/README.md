@@ -18,4 +18,5 @@ poetry run pytest -s ./path/to/test.py
 
 Specify matching tests, e.g, on every test name containing util
 ```
-peotry run pytest 
+peotry run pytest -k "util"
+```

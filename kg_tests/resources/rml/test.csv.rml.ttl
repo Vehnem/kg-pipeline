@@ -8,12 +8,9 @@
 @prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
 @base <http://example.com/ns#>.
 
-
-
-
 <#ArtistMapping> a rr:TriplesMap;
   rml:logicalSource [
-    rml:source "./llm4kg_tests/examples/rml/test.csv" ;
+    rml:source "llm4kg_tests/resources/rml/test.csv" ;
     rml:referenceFormulation ql:CSV
   ];
   
@@ -47,7 +44,7 @@
       		rr:objectMap [ rr:constant grel:string_split ] ] ;
         rr:predicateObjectMap [
           rr:predicate grel:p_string_sep ;
-          rr:objectMap [ rr:constant "\|" ] ] ;
+          rr:objectMap [ rr:constant "\\|" ] ] ;
       	rr:predicateObjectMap [
       		rr:predicate grel:valueParameter ;
       		rr:objectMap [ rml:reference "profession" ] ]
