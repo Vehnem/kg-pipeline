@@ -1,19 +1,25 @@
 ### Test RML Mapper ###
-from llm4kg_tasks.map.rml_mapper import RMLMapperJavaImpl
+from kg_tasks.map.rml_mapper import RMLMapperJavaImpl
 from rdflib import Graph
-from llm4kg_core.llm.prompt import read_prompt_templates
-from llm4kg_core.llm.anthropic import AnthropicModel
-from llm4kg_core import config
-from llm4kg_core.utils.cache import MongoCache, CacheDecorator
-from llm4kg_core.utils.output_parser import CodeBlockExtractor
-from llm4kg_tasks.map.rml_util import RML_Wrapper
+from kg_core.llm.prompt import read_prompt_templates
+from kg_core.llm.anthropic import AnthropicModel
+from kg_core import config
+from kg_core.utils.cache import MongoCache, CacheDecorator
+from kg_core.utils.output_parser import CodeBlockExtractor
+from kg_tasks.map.rml_util import RML_Wrapper
 
 cacheImpl = MongoCache('mongodb://localhost:10000/')
 cache = CacheDecorator(cacheImpl)
 
 def test_rmlmapperjavaimpl():
     rml_mapper = RMLMapperJavaImpl()
-    rml_mapper.apply_mapping("llm4kg_tests/resources/rml/test.csv.rml.ttl")
+    rml_mapper.apply_mapping("kg_tests/resources/rml/test.csv.rml.ttl")
+    pass
+
+
+def test_rmlmapperjavaimpl_broken():
+    rml_mapper = RMLMapperJavaImpl()
+    rml_mapper.apply_mapping("kg_tests/resources/rml/test.csv.rml_broken_fixed.ttl")
     pass
 
 
@@ -24,7 +30,6 @@ def test_replace_source():
     rml_wrapper.replace_rml_source("llm4kg_tests/resources/rml/test.json")
     rml_wrapper.show()
     pass
-
 
 @cache.cached
 def __send_request(prompt: str):

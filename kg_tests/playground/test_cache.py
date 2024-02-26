@@ -1,6 +1,6 @@
 ###Test cache implementations.###
 import time
-from llm4kg_core.utils.cache import MongoCache, CacheDecorator
+from kg_core.utils.cache import MongoCache, CacheDecorator
 
 mongo_cache = MongoCache()
 cache_decorator = CacheDecorator(mongo_cache)

@@ -1,5 +1,5 @@
 import subprocess
-from llm4kg_core.utils.annotation import todo
+from kg_core.utils.annotation import todo
 
 class Limes:
     def __init__(self, config):

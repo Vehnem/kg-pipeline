@@ -25,29 +25,4 @@
       rml:reference "name";
       rr:datatype xsd:string
       ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate example:age;
-    rr:objectMap [
-      rml:reference "age";
-      rr:datatype xsd:int
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate example:profession;
-    rr:objectMap[
-      fnml:functionValue [
-      	rr:predicateObjectMap [
-      		rr:predicate fno:executes ;
-      		rr:objectMap [ rr:constant grel:string_split ] ] ;
-        rr:predicateObjectMap [
-          rr:predicate grel:p_string_sep ;
-          rr:objectMap [ rr:constant "\\|" ] ] ;
-      	rr:predicateObjectMap [
-      		rr:predicate grel:valueParameter ;
-      		rr:objectMap [ rml:reference "profession" ] ]
-      ]
-    ]
   ].

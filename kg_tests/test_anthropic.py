@@ -1,8 +1,8 @@
 ### Test Anthropic Claude API reuqests ###
 
 import anthropic
-from llm4kg_core import config
-from llm4kg_core.llm.anthropic import AnthropicModel
+from kg_core import config
+from kg_core.llm.anthropic import AnthropicModel
 # from anthropic.resources.messages import 
 
 

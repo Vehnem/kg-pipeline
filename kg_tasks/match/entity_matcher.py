@@ -1,7 +1,7 @@
 
 from abc import ABC, abstractmethod
 
-from llm4kg_tasks.task import DiTask
+from kg_tasks.task import DiTask
 
 class EntityMatcher(DiTask):
     """

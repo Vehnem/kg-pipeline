@@ -2,9 +2,9 @@ import time
 from os import listdir
 from os.path import isfile, join
 import streamlit as st
-from llm4kg_core.llm.prompt import read_prompt_templates
+from kg_core.llm.prompt import read_prompt_templates
 from rdflib import Graph
-import llm4kg_ui.util as util
+import kg_ui.util as util
 import yaml
 import traceback
 

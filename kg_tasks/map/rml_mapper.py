@@ -1,7 +1,7 @@
 # from pyrml import x^
 from rdflib import Graph
 import subprocess, os
-from llm4kg_core.config import Config
+from kg_core.config import Config
 
 # class PyRMLImpl:
 #     """

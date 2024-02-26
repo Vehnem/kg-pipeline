@@ -1,7 +1,8 @@
 from typing import List
 from SPARQLWrapper  import SPARQLWrapper, JSON
-from llm4kg_core.utils import sparql
+from kg_core.utils import sparql
 from pyspark.sql import SparkSession
+from pyspark import RDD
 
 
 # Q6545185 - unique identifier

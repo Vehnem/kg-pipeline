@@ -1,4 +1,4 @@
-import llm4kg_core.llm.oai as oaiYLA
+import kg_core.llm.oai as oaiYLA
 import openai
 
 openai.api_key = "" #Your openai API key

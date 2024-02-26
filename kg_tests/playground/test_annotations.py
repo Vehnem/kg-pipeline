@@ -1,4 +1,4 @@
-from llm4kg_core.utils.annotation import deprecated, todo
+from kg_core.utils.annotation import deprecated, todo
 
 @deprecated("Use the new add_numbers function instead.")
 def add(a, b):

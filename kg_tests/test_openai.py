@@ -1,6 +1,6 @@
 ### Test OpenAI API requests ###
-from llm4kg_core.config import Config
-from llm4kg_core.llm.oai import OpenAIModel
+from kg_core.config import Config
+from kg_core.llm.oai import OpenAIModel
 
 config = Config()
 

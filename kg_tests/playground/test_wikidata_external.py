@@ -1,9 +1,9 @@
 from pyspark import RDD
 from pyspark.sql import DataFrame
-from llm4kg_dataset.acquisition.wikidata.ids import IdExtractorDBpeia
+from kg_data.connector.wiki.wikidata import IdExtractorDBpeia
 from typing import List
 from SPARQLWrapper  import SPARQLWrapper, JSON
-from llm4kg_core.utils import sparql
+from kg_core.utils import sparql
 from pyspark.sql import SparkSession
 
 # def test_spark_dbpedia_extractor():

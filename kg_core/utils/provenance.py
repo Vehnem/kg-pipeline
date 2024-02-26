@@ -18,3 +18,7 @@ class MongoProvenance():
     def set(self, prompt: str, completion: str, meta={}):
         meta.update({'timestamp': datetime.datetime.now()})
         self.collection.insert_one({'prompt': prompt, 'completion': completion, 'meta': meta})
+
+class LLMCompletionProvenance():
+    def __init__(self):
+        pass

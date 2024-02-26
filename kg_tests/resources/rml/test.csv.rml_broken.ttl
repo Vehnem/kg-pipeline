@@ -10,7 +10,7 @@
 
 <#ArtistMapping> a rr:TriplesMap;
   rml:logicalSource [
-    rml:source "llm4kg_tests/resources/rml/test.csv" ;
+    rml:source "kg_tests/resources/rml/test.csv" ;
     rml:referenceFormulation ql:CSV
   ];
   

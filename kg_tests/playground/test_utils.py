@@ -1,4 +1,4 @@
-from llm4kg_core.utils.output_parser import CodeBlockExtractor
+from kg_core.utils.output_parser import CodeBlockExtractor
 
 def test_codeblock_extractor():
 

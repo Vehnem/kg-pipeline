@@ -1,7 +1,7 @@
 ### OpenAI API connector ###
 
 import openai
-from llm4kg_core.llm.model import Model
+from kg_core.llm.model import Model
 
 CHAT_COMPLETION_TYPE = 0
 COMPLETION_TYPE = 1

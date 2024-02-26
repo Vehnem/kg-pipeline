@@ -1,0 +1,4 @@
+<http://artists.example.com/01> <http://example.org/onto/terms/name> "Bob" .
+<http://artists.example.com/01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/onto/terms/Person> .
+<http://artists.example.com/02> <http://example.org/onto/terms/name> "Alice" .
+<http://artists.example.com/02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/onto/terms/Person> .

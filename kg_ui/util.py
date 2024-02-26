@@ -1,9 +1,9 @@
-from llm4kg_core.llm.prompt import read_prompt_templates
-from llm4kg_core.llm.anthropic  import AnthropicModel
-from llm4kg_core.config import Config
-from llm4kg_core.utils.cache import MongoCache, CacheDecorator
-from llm4kg_core.utils.provenance import MongoProvenance
-from llm4kg_core.utils.output_parser import CodeBlockExtractor
+from kg_core.llm.prompt import read_prompt_templates
+from kg_core.llm.anthropic  import AnthropicModel
+from kg_core.config import Config
+from kg_core.utils.cache import MongoCache, CacheDecorator
+from kg_core.utils.provenance import MongoProvenance
+from kg_core.utils.output_parser import CodeBlockExtractor
 
 cacheImpl = MongoCache('mongodb://localhost:10000/')
 cache = CacheDecorator(cacheImpl)

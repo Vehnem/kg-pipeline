@@ -1,5 +1,5 @@
 ### Sample Tests ###
-from llm4kg_core.utils.annotation import todo
+from kg_core.utils.annotation import todo
 
 @todo
 def test_csv_sample():

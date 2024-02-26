@@ -1,4 +1,4 @@
-from llm4kg_core.metrics.metrics import Metrics
+from kg_core.metrics.metrics import Metrics
 
 def test_metrics():
     metrics = Metrics()

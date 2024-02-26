@@ -1,4 +1,4 @@
-from llm4kg_core.config import Config
+from kg_core.config import Config
 
 config = Config()
 

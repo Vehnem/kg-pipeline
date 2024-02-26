@@ -1,4 +1,4 @@
-from llm4kg_core.llm.model import Model
+from kg_core.llm.model import Model
 from anthropic import Anthropic
 
 # https://docs.anthropic.com/claude/reference/selecting-a-model

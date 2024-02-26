@@ -1,6 +1,6 @@
 ### Test Higherorder Functions in Python ###
 import time, calendar
-from llm4kg_core.utils.cache import cached
+from kg_core.utils.cache import cached
 
 def dummy_function(x: str):
     return x
