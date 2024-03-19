@@ -1,24 +1,41 @@
 # KG-Pipeline
 
-Tooling and Interfacing for Knowledge Graphs Construction
+Tooling and Interfacing for Knowledge Graphs Construction.
 
 ## Structure
 
 - **core** - core model of the framework
-  - **llm** - LLM interfaces
-  - **provenance** - 
-  - **metrics** - 
+  - **llm** - LLM interfaces (OpenAi, Anthropic, Google)
+  - **provenance** - TODO
+  - **metrics** - metrics for evaluation
   - **utils** - helper methods
 - **tasks** - single kgc tasks and tool interfaces
-  - 
 - **datasets** - input data acquisition and generation
-  - **utils** - 
-  - **acquisition** -
-  - **sampling** - 
 - **tests** - tests with examples
 - **ui** - web user intefaces
   - **streamlit.py** starts a simple web interface
 - **scripts** - handy scripts for development
+
+## LLM for KG experiments
+
+### RML generation and RML mapping tests
+
+Experiments for the paper "Towards self-configuring Knowledge Graph Construction Pipelines using LLMs - A Case Study with RML"
+
+**Iterate runs and requests LLM (generate RML+repair Turtle)**
+```
+poetry run pytest -s kg_tests/test_final_experiment.py -k test_final 
+```
+
+**Generate Stats for paper**
+```
+poetry run pytest -s kg_tests/test_final_experiment.py -k test_final 
+```
+
+**Inspect statistics and view F1 Scores for metrics**
+```
+streamlit run kg_ui/execute.py
+```
 
 ## Config.yaml
 

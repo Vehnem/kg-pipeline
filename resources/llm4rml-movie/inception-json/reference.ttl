@@ -1,0 +1,62 @@
+@prefix code: <http://example.org/code/> .
+@prefix crml: <http://semweb.mmlab.be/ns/rml/condition#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix ex: <http://mykg.org/resource/> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix fun: <http://mykg.org/function/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:nm0000138 a dbo:Person;
+  dbo:birthYear "1974"^^xsd:gYear;
+  dbo:name "Leonardo DiCaprio" .
+
+ex:nm0001877 a dbo:Person;
+  dbo:birthYear "1957"^^xsd:gYear;
+  dbo:name "Hans Zimmer" .
+
+ex:nm0002892 a dbo:Person;
+  dbo:birthYear "1961"^^xsd:gYear;
+  dbo:name "Wally Pfister" .
+
+ex:nm0245596 a dbo:Person;
+  dbo:name "Guy Hendrix Dyas" .
+
+ex:nm0330687 a dbo:Person;
+  dbo:birthYear "1981"^^xsd:gYear;
+  dbo:name "Joseph Gordon-Levitt" .
+
+ex:nm0634240 a dbo:Person;
+  dbo:birthYear "1970"^^xsd:gYear;
+  dbo:name "Christopher Nolan" .
+
+ex:nm0680983 a dbo:Person;
+  dbo:birthYear "1987"^^xsd:gYear;
+  dbo:name "Elliot Page" .
+
+ex:nm0809059 a dbo:Person;
+  dbo:birthYear "1960"^^xsd:gYear;
+  dbo:name "Lee Smith" .
+
+ex:nm0858799 a dbo:Person;
+  dbo:birthYear "1971"^^xsd:gYear;
+  dbo:name "Emma Thomas" .
+
+ex:nm0913822 a dbo:Person;
+  dbo:birthYear "1959"^^xsd:gYear;
+  dbo:name "Ken Watanabe" .
+
+ex:tt1375666 a dbo:Film;
+  dbo:composer ex:nm0001877;
+  dbo:director ex:nm0634240;
+  dbo:editing ex:nm0809059;
+  dbo:genre "Action", "Adventure", "Sci-Fi";
+  dbo:originalTitle "Inception";
+  dbo:producer ex:nm0858799;
+  dbo:runtime 1.48E2;
+  dbo:starring ex:nm0000138, ex:nm0330687, ex:nm0680983, ex:nm0913822;
+  dbo:startYear "2010"^^xsd:gYear;
+  dbo:title "Inception" .

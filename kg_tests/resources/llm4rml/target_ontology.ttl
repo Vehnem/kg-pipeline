@@ -5,7 +5,6 @@
 @prefix dbo: <http://dbpedia.org/ontology/>.
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 
-
 ####
 # Class hierarchy
 ###
@@ -29,7 +28,6 @@ dbo:VideoGame a owl:Class ;
    rdfs:label "A Video Game" ;
    rdfs:subClassOf dbo:Work .
 
-
 ###
 # Properties for Persons
 ###
@@ -51,7 +49,7 @@ dbo:deathYear  a owl:DatatypeProperty ;
 
 dbo:profession a owl:ObjectProperty ;
    rdfs:label "profession" ;
-   rdfs:range dbo:Person .
+   rdfs:domain dbo:Person .
 
 
 ###
@@ -89,13 +87,12 @@ dbo:runtime a owl:DatatypeProperty ;
    rdfs:domain dbo:Work .
 
 <http://dbpedia.org/ontology/Work/runtime> a owl:DatatypeProperty ;
-   rdfs:label "runtime (m)" ;
-   rdfs:range <https://dbpedia.org/datatype/minute> ;
-   rdfs:domain dbo:Work .
+  rdfs:label "runtime (m)" ;
+  rdfs:range <https://dbpedia.org/datatype/minute> ;
+  rdfs:domain dbo:Work .
 
 <https://dbpedia.org/datatype/minute> a rdfs:Datatype ;
-   rdfs:label "minute" .
-
+  rdfs:label "minute" .
 
 ###
 # Properties for Person role in Work
@@ -158,4 +155,10 @@ dbo:composer a owl:ObjectProperty ;
 dbo:editor  a owl:ObjectProperty ;
    rdfs:label "editor" , "redaktor"@pl , "Herausgeber"@de ;
    rdfs:range dbo:Agent ;
+   rdfs:subPropertyOf dul:coparticipatesWith .
+
+dbo:editing  a owl:ObjectProperty ;
+   rdfs:label "editing" ;
+   rdfs:range dbo:Person ;
+   rdfs:domain dbo:Film ;
    rdfs:subPropertyOf dul:coparticipatesWith .

@@ -8,3 +8,7 @@ def test_config_key():
 
 def test_config_bindings():
     print(config.bindings())
+
+
+def test_config_llm_models():
+    print(config.llm_models())

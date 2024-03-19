@@ -31,8 +31,9 @@ class RMLMapperJavaImpl:
         pass
 
     def apply_mapping(self, mapping_path):
-        print(mapping_path)
-        cmd = self.entrypoint + ['-m',mapping_path]
-        stdout = subprocess.call(cmd)
-        return stdout
+        cmd = self.entrypoint + ['-m',mapping_path,'-s','turtle', '-b', 'http://mykg.org/']
+        completedCommand = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # print(completedCommand.stderr.decode())
+        # print('rml-mapper return code', completedCommand.returncode)
+        return {'output': completedCommand.stdout.decode(), 'error': completedCommand.stderr.decode(), 'code': completedCommand.returncode}
 

@@ -36,18 +36,51 @@
   ];
 
   rr:predicateObjectMap [
-    rr:predicate example:profession;
+    rr:predicate example:foo;
     rr:objectMap[
-      fnml:functionValue [
-      	rr:predicateObjectMap [
-      		rr:predicate fno:executes ;
-      		rr:objectMap [ rr:constant grel:string_split ] ] ;
-        rr:predicateObjectMap [
-          rr:predicate grel:p_string_sep ;
-          rr:objectMap [ rr:constant "\\|" ] ] ;
-      	rr:predicateObjectMap [
-      		rr:predicate grel:valueParameter ;
-      		rr:objectMap [ rml:reference "profession" ] ]
-      ]
+      rr:reference "age*2"
     ]
-  ].
+  ];
+
+  rr:predicateObjectMap
+         [ rr:objectMap [ rml:reference "runtimeMinutes" ;
+                    rr:datatype xsd:double ;
+                    rr:functionValue [ rml:logicalFunction [ rr:functionForm ql:numericMultiply ;
+                                    rr:parameter rdf:langString,
+                                        6e+01 ;
+                                    rr:parameterValueType rr:Literal ] ] ]; rr:predicate example:runtimeMinutes ] .
+  # rr:predicateObjectMap [
+  #   rr:predicate example:profession;
+  #   rr:objectMap[
+  #     fnml:functionValue [
+  #     	rr:predicateObjectMap [
+  #     		rr:predicate fno:executes ;
+  #     		rr:objectMap [ rr:constant grel:string_split ] ] ;
+  #       rr:predicateObjectMap [
+  #         rr:predicate grel:p_string_sep ;
+  #         rr:objectMap [ rr:constant "\\|" ] ] ;
+  #     	rr:predicateObjectMap [
+  #     		rr:predicate grel:valueParameter ;
+  #     		rr:objectMap [ rml:reference "profession" ] ]
+  #     ]
+  #   ]
+  # ];
+
+
+# d	http://users.ugent.be/~bjdmeest/function/grel.ttl#p_dec_n
+# d2	http://users.ugent.be/~bjdmeest/function/grel.ttl#param_n2
+
+
+  #     fnml:functionValue [
+  #     	rr:predicateObjectMap [
+  #     		rr:predicate fno:executes ;
+  #     		rr:objectMap [ rr:constant <http://users.ugent.be/~bjdmeest/function/grel.ttl#math_factn> ] ] ; # grel:math_factn ] ] ;
+  #       rr:predicateObjectMap [
+  #         rr:predicate grel:param_int_1 ;
+  #         rr:objectMap [ rr:constant "2"^^xsd:int ] ] ;
+  #     	rr:predicateObjectMap [
+  #     		rr:predicate grel:parma_int_2 ;
+  #     		rr:objectMap [ rml:constant "6"^^xsd:int ] ]
+  #     ]
+  #   ]
+  # # ] .

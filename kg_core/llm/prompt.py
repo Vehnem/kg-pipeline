@@ -1,5 +1,6 @@
 import yaml, json
 from typing import Dict
+from schema import Schema, And, Use, Optional, SchemaError
 
 class PromptTemplate:
     """
@@ -48,3 +49,13 @@ def read_prompt_templates(file_path) -> Dict[str, PromptTemplate]:
         prompts.update({ prompt['id'] : promptTemplate })
 
     return prompts
+
+class Prompt():
+
+    
+
+    def __init__(self, id, description, prompt, variables):
+        self.id = id
+        self.description = description
+        self.prompt = prompt
+        self.variables = variables

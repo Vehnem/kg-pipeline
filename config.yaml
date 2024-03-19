@@ -2,16 +2,23 @@
 # config.yaml for kg-pipeline
 #
 
-
 # openai (gpt) specific config
 openai:
   api-key: # or ENV('OPENAI_API_KEY') 
-
 
 # anthropic (claude) specific config
 anthropic:
   api-key: # or ENV('ANTHROPIC_API_KEY')
 
+# google (gemini) specific config
+gcloud:
+  api-key: # or ENV('GOOGLE_API_KEY')
+  project-id: shining-lamp-416315
+  project-location: us-central1
+
+directories:
+  snippets: target/data_snippets/
+  ontology: kg_tests/resources/llm4rml/target_ontology.ttl
 
 # configuration of external tools
 bindings:
@@ -22,95 +29,46 @@ bindings:
     description: LIMES
     command: 'java -jar ./tools/limes.jar'
 
+# TODO position llm_models and llm_tasks under llm
+# association of LLM models and implementations
+llm_models:
+  - id: gpt-3.5-turbo
+    class: OpenAIModel
+  - id: gpt-3.5-turbo-instruct
+    class: OpenAIModel
+  - id: gpt-4
+    class: OpenAIModel
+  - id: gpt-4-0125-preview
+    class: OpenAIModel
+  - id: claude-2.1
+    class: AnthropicModel
+  - id: claude-2.0
+    class: AnthropicModel
+  - id: claude-3-opus-20240229
+    class: AnthropicModel
+  - id: gemini-pro
+    class: GoogleModel
+  - id: gemini-ultra
+    class: GoogleModel
+  - id: test-rml
+    class: TestModel
+
+# LLM specific task config
+llm_tasks:
+  - id: rml-generation
+    binding: rml-mapper-java # the binding defined above
+    prompts: kg_tests/resources/llm4rml/prompts-rml.yaml
+    prompt_data:
+      - id: TGT-ONTO
+        file: kg_tests/resources/llm4rml/target_ontology_parsed.ttl
+      - id: RML-ONTO
+        file: kg_tests/resources/llm4rml/rml-ontology_parsed.ttl
+      - id: RDFLIB_ERROR_MESSAGE
+        function: TODO
+
+# logging and metadata store
+journal:
+  db:
+    url: mongodb://localhost:10000/db
 
 # NOTES: List of OEPNAI AI parameter
-llm_params:
-  - temperature: 0.0
-    top_p: 0.0
-    frequency_penalty: 0.0
-    presence_penalty: 0.0
-    stop: []
-    logprobs: 0
-    echo: false
-    stream: false
-    best_of: 0
-    n: 0
-    logit_bias: {}
-    return_prompt: false
-    return_metadata: false
-    return_logprobs: false
-    return_tokens: false
-    return_full_text: false
-    return_choices: false
-    return_intermediate_results: false
-    return_html: false
-    return_html_prefix: ''
-    return_html_suffix: ''
-    return_html_wrap_with_model_tag: false
-    return_html_add_trailing_newline: false
-  - name: ''
-    description: ''
-    prompt: ''
-    examples: []
-    completion: ''
-    max_tokens: 0
-    temperature: 0.0
-    top_p: 0.0
-    frequency_penalty: 0.0
-    presence_penalty: 0.0
-    stop: []
-    logprobs: 0
-    echo: false
-    stream: false
-    best_of: 0
-    n: 0
-    logit_bias: {}
-    return_prompt: false
-    return_metadata: false
-    return_logprobs: false
-    return_tokens: false
-    return_full_text: false
-    return_choices: false
-    return_intermediate_results: false
-    return_html: false
-    return_html_prefix: ''
-    return_html_suffix: ''
-    return_html_wrap_with_model_tag: false
-    return_html_add_trailing_newline: false
-    return_html_input_prefix: ''
-    return_html_input_suffix: ''
-    return_html_output_prefix: ''
-    return_html_output_suffix: ''
-    return_html_classes: []
-    return_html_title: ''
-    return_html_css: ''
-    return_html_js: ''
-    return_html_loading_model_text: ''
-    return_html_loading_model_css: ''
-    return_html_loading_model_js: ''
-    return_html_async: false
-    return_html_input_wrap: false
-    return_html_output_wrap: false
-    return_html_strip_input_prompt: false
-    return_html_strip_output_prompt: false
-    return_html_strip_prompt: false
-    return_html_strip_response: false
-    return_html_strip_trailing_newlines: false
-    return_html_strip_trailing_whitespace: false
-    return_html_strip_whitespace: false
-    return_html_strip_empty_lines: false
-    return_html_strip_lines: false
-    return_html_strip_all_lines: false
-    return_html_strip_all_tags: false
-    return_html_strip_tags: []
-    return_html_strip_tag: ''
-    return_html_strip_style: false
-    return_html_strip_scripts: false
-    return_html_strip_comments: false
-    return_html_strip_unknown_tags: false
-    return_html_strip_unknown_tags_with_content: false
-    return_html_strip_unknown_tags_with_attributes: false
-    return_html_strip_unknown_tags_with_attributes_and_content: false
-    return_html_strip_unknown_tags_with_attributes_and_content_with_content: false
-    return_html_strip_unknown_tags_with_attributes_and_content_with_attributes: false
-    return_html_strip_unknown: false

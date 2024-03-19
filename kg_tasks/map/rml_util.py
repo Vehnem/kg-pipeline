@@ -6,7 +6,7 @@ class RML_Wrapper:
     def __init__(self, rml_graph: Graph):
         self.graph : Graph = rml_graph
 
-    def replace_rml_source(self, source_path) -> str:
+    def replace_rml_source(self, source_path):
         self.graph.update(
             '''
             DELETE { ?s <http://semweb.mmlab.be/ns/rml#source> ?o . }
@@ -15,6 +15,20 @@ class RML_Wrapper:
             '''
         )
 
+    def __str__(self) -> str:
+        return self.graph.serialize(format="turtle")
+
+
+    def getGraph(self)-> Graph:
+        return self.graph
 
     def show(self):
-        print(self.graph.serialize(format="turtle"))
+        print(self)
+
+
+
+
+class LLM4RML_Evaluator:
+
+    def __init__(self, rml_graph: Graph):
+        self.graph : Graph = rml_graph

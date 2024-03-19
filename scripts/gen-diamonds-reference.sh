@@ -1,0 +1,1 @@
+java -jar tools/rmlmapper.jar -m resources/llm4rml-movie/diamonds-json/diamonds-reference.rml.ttl -s turtle > resources/llm4rml-movie/diamonds-json/diamonds-reference.ttl

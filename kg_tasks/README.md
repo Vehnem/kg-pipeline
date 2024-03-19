@@ -4,9 +4,10 @@ Implementation of KGC Tasks and Interfaces with External Tools.
 
 ## List of Tasks
 
-- **map** - format mappings
-- **completion** - completion and enrichment
-- **match** - matching of entities, properties, schemata, ontologies
+- **completion** - extending exisiting datasets
+- **map** - transforming formats leveraging rules
+- **match** - matching entities, properties, schemata, ontologies
+- **repair** - data repair methods
 
 ## External Tools
 

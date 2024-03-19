@@ -1,0 +1,81 @@
+{
+    "genres" : ["Comedy", "Mystery"],
+    "id" : "tt0167423",
+    "involvedPeople" : [
+       {
+          "birthYear" : 1916,
+          "category" : "actor",
+          "deathYear" : 2020,
+          "id" : "nm0000018",
+          "ordering" : 1,
+          "primaryName" : "Kirk Douglas"
+       },
+       {
+          "birthYear" : 1924,
+          "category" : "actress",
+          "deathYear" : 2014,
+          "id" : "nm0000002",
+          "ordering" : 2,
+          "primaryName" : "Lauren Bacall"
+       },
+       {
+          "birthYear" : 1952,
+          "category" : "actor",
+          "id" : "nm0000101",
+          "ordering" : 3,
+          "primaryName" : "Dan Aykroyd"
+       },
+       {
+          "birthYear" : 1979,
+          "category" : "actor",
+          "id" : "nm0021607",
+          "ordering" : 4,
+          "primaryName" : "Corbin Allred"
+       },
+       {
+          "birthYear" : 1971,
+          "category" : "director",
+          "id" : "nm0038875",
+          "ordering" : 5,
+          "primaryName" : "John Asher"
+       },
+       {
+          "category" : "writer",
+          "id" : "nm0441631",
+          "ordering" : 6,
+          "primaryName" : "Allan Aaron Katz"
+       },
+       {
+          "category" : "producer",
+          "id" : "nm4500812",
+          "ordering" : 7,
+          "primaryName" : "Patricia Green"
+       },
+       {
+          "birthYear" : 1957,
+          "category" : "composer",
+          "deathYear" : 2012,
+          "id" : "nm0006107",
+          "ordering" : 8,
+          "primaryName" : "Joel Goldsmith"
+       },
+       {
+          "category" : "cinematographer",
+          "id" : "nm0254580",
+          "ordering" : 9,
+          "primaryName" : "Paul Elliott"
+       },
+       {
+          "category" : "editor",
+          "id" : "nm0002706",
+          "ordering" : 10,
+          "primaryName" : "David L. Bertman"
+       }
+    ],
+    "isAdult" : 0,
+    "originalTitle" : "Diamonds",
+    "primaryTitle" : "Diamonds",
+    "runtimeMinutes" : 91,
+    "startYear" : 1999,
+    "titleType" : "movie"
+ }

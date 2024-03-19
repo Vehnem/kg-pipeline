@@ -1,0 +1,62 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix ex: <http://example.com/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://mykg.org/resource/nm0000138> a dbo:Actor, dbo:Person;
+  dbo:birthYear "1974"^^xsd:gYear;
+  dbo:name "Leonardo DiCaprio"@en;
+  dbo:starring <http://mykg.org/resource/tt1375666> .
+
+<http://mykg.org/resource/nm0001877> a dbo:Person;
+  dbo:birthYear "1957"^^xsd:gYear;
+  dbo:composer <http://mykg.org/resource/tt1375666>;
+  dbo:name "Hans Zimmer"@en .
+
+<http://mykg.org/resource/nm0002892> a dbo:Person;
+  dbo:birthYear "1961"^^xsd:gYear;
+  dbo:name "Wally Pfister"@en .
+
+<http://mykg.org/resource/nm0245596> a dbo:Person;
+  dbo:birthYear "\\N"^^xsd:gYear;
+  dbo:name "Guy Hendrix Dyas"@en .
+
+<http://mykg.org/resource/nm0330687> a dbo:Actor, dbo:Person;
+  dbo:birthYear "1981"^^xsd:gYear;
+  dbo:name "Joseph Gordon-Levitt"@en;
+  dbo:starring <http://mykg.org/resource/tt1375666> .
+
+<http://mykg.org/resource/nm0634240> a dbo:Person;
+  dbo:birthYear "1970"^^xsd:gYear;
+  dbo:director <http://mykg.org/resource/tt1375666>;
+  dbo:name "Christopher Nolan"@en .
+
+<http://mykg.org/resource/nm0680983> a dbo:Actor, dbo:Person;
+  dbo:birthYear "1987"^^xsd:gYear;
+  dbo:name "Elliot Page"@en;
+  dbo:starring <http://mykg.org/resource/tt1375666> .
+
+<http://mykg.org/resource/nm0809059> a dbo:Person;
+  dbo:birthYear "1960"^^xsd:gYear;
+  dbo:editing <http://mykg.org/resource/tt1375666>;
+  dbo:name "Lee Smith"@en .
+
+<http://mykg.org/resource/nm0858799> a dbo:Person;
+  dbo:birthYear "1971"^^xsd:gYear;
+  dbo:name "Emma Thomas"@en;
+  dbo:producer <http://mykg.org/resource/tt1375666> .
+
+<http://mykg.org/resource/nm0913822> a dbo:Actor, dbo:Person;
+  dbo:birthYear "1959"^^xsd:gYear;
+  dbo:name "Ken Watanabe"@en;
+  dbo:starring <http://mykg.org/resource/tt1375666> .
+
+<http://mykg.org/resource/tt1375666> a dbo:Film;
+  <http://dbpedia.org/ontology/Work/runtime> "148"^^<https://dbpedia.org/datatype/minute>;
+  dbo:genre "Action"@en, "Adventure"@en, "Sci-Fi"@en;
+  dbo:originalTitle "Inception"@en;
+  dbo:startYear "2010"^^xsd:gYear;
+  dbo:title "Inception"@en ;
+  dbo:starring <http://mykg.org/resource/nm0000138>, <http://mykg.org/resource/nm0330687>, <http://mykg.org/resource/nm0680983>, <http://mykg.org/resource/nm0913822> .

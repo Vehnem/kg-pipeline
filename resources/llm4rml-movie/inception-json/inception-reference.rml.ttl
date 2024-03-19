@@ -1,0 +1,109 @@
+@prefix code: <http://example.org/code/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix ex: <http://mykg.org/resource/> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix fun: <http://mykg.org/function/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crml:   <http://semweb.mmlab.be/ns/rml/condition#> .
+@base <http://mykg.org/resource/> .
+
+<FilmMapping> a rr:TriplesMap;
+    rml:logicalSource [ rml:iterator "$" ;
+            rml:referenceFormulation ql:JSONPath ;
+            rml:source "resources/llm4rml-movie/inception-json/inception.json" ] ;
+
+    rr:subjectMap [
+        rr:template "http://mykg.org/resource/{$[?(@.titleType=='movie')].id}";
+        rr:class dbo:Film ;
+    ] ;
+
+    rr:predicateObjectMap 
+
+    # dbo:title
+        [
+        rr:predicate dbo:title;
+        rr:objectMap [ rml:reference "primaryTitle" ] ],
+
+    # dbo:originalTitle
+        [
+        rr:predicate dbo:originalTitle;
+        rr:objectMap [ rml:reference "originalTitle" ] ],
+
+    # dbo:startYear
+        [
+        rr:predicate dbo:startYear;
+        rr:objectMap [ rml:reference "startYear" ; rr:datatype xsd:gYear ] ],
+
+    # dbo:endYear
+        [
+        rr:predicate dbo:endYear;
+        rr:objectMap [ rml:reference "endYear" ; rr:datatype xsd:gYear ] ],
+
+    # dbo:runtime
+        [
+        rr:predicate dbo:Work/runtime ;
+        rr:objectMap [ rml:reference "runtimeMinutes" ; rr:datatype xsd:double ] ],
+
+    # dbo:genre
+        [
+        rr:predicate dbo:genre;
+        rr:objectMap [ rml:reference "genres" ] ],
+
+   # dbo:starring (actor)
+        [
+        rr:predicate dbo:starring;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='actor')].id}" ] ],
+
+    # dbo:starring (actress)
+        [
+        rr:predicate dbo:starring;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='actress')].id}" ] ],
+
+    # dbo:director
+        [
+        rr:predicate dbo:director;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='director')].id}" ] ],
+
+    # dbo:composer
+        [ 
+        rr:predicate dbo:composer;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='composer')].id}" ] ],
+
+    # dbo:producer
+        [ 
+        rr:predicate dbo:producer;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='producer')].id}" ] ],
+
+    # dbo:editting
+        [ 
+        rr:predicate dbo:editing;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='editor')].id}" ] ] ,
+
+    # dbo:writer
+        [ 
+        rr:predicate dbo:writer;
+        rr:objectMap [  rr:template "http://mykg.org/resource/{$.involvedPeople[?(@.category=='writer')].id}" ] ] .
+
+<PersonMapping> a rr:TriplesMap ;
+    rml:logicalSource [ rml:iterator "$.involvedPeople[*]" ;
+            rml:referenceFormulation ql:JSONPath ;
+            rml:source "resources/llm4rml-movie/inception-json/inception.json" ] ;
+
+    rr:subjectMap [ rr:class dbo:Person ;
+            rr:template "http://mykg.org/resource/{id}" ] ;
+
+    rr:predicateObjectMap 
+        [ 
+                rr:objectMap [ rml:reference "deathYear" ; rr:datatype xsd:gYear ] ;
+                rr:predicate dbo:deathYear ],
+        [
+                rr:objectMap [ rml:reference "primaryName" ] ;
+                rr:predicate dbo:name ],
+        [ 
+                rr:objectMap [ rml:reference "birthYear" ; rr:datatype xsd:gYear ] ;
+                rr:predicate dbo:birthYear ] .
+

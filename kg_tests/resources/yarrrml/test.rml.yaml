@@ -1,0 +1,28 @@
+prefixes:
+  ex: "http://example.org/"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  dbo: "http://dbpedia.org/ontology/"
+  foaf: "http://xmlns.com/foaf/0.1/"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+
+mappings:
+  Film:
+    sources:
+      - ['target/data_snippets/final-inception.json~jsonpath', '$']
+    s: ex:film/$(id)
+    po:
+      - [a, dbo:Film]
+      - [dbo:title, "$(title)"]
+      - [dbo:releaseDate, "$(startYear)", xsd:date]
+      - [dbo:genre, "$(genre)"]
+
+  Person:
+    sources:
+      - ['target/data_snippets/final-inception.json', '$.involvedPeople[*]']
+    s: ex:person/$(id)
+    po:
+      - [a, dbo:Person]
+      - [foaf:name, "$(name)"]
+      - [dbo:birthYear, "$(birthYear)", xsd:year]
+      - [dbo:starring, ex:film/$(id)] # Assuming $(id) references the film ID; you might need to adjust based on actual data paths.
+

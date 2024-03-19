@@ -1,7 +1,9 @@
 from functools import wraps
 from abc import ABC, abstractmethod
 from pymongo import MongoClient
-from .hash import Sha512Hash
+from .hash import Sha512Hash, hashDict
+import json
+import datetime
 
 class Cache(ABC):
     @abstractmethod
@@ -10,6 +12,9 @@ class Cache(ABC):
     
     @abstractmethod
     def set(self, key, value):
+        pass
+
+    def insert(self, value):
         pass
 
 class MongoCache(Cache):
@@ -23,11 +28,15 @@ class MongoCache(Cache):
 
     def get(self, key):
         result = self.collection.find_one({'_id': key})
-        print(result)
+        # print(result)
         return result['result'] if result else None
 
     def set(self, key, value):
         self.collection.insert_one({'_id': key, 'result': value})
+
+    def insert(self, value):
+        self.collection.insert_one({'result': value})
+
 
 class RedisCache(Cache):
     def __init__(self, host='localhost', port=6379, db=0):
@@ -48,13 +57,21 @@ class CacheDecorator:
     def cached(self, func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            key = Sha512Hash(str((args, frozenset(kwargs.items()))))
+            key = Sha512Hash(str((args, json.dumps(kwargs, sort_keys=True))))
             record = self.cache.get(key)
             if record is None:
-                result = func(*args, **kwargs)
-                self.cache.set(key,result)
-                return result
+                return_value = func(*args, **kwargs)
+                self.cache.set(key,{'args': args, 'kwargs': kwargs, 'return_value': return_value, 'timestamp': datetime.datetime.now()})
+                return return_value
             else:
-               return record
+               return record['return_value']
         
+        return wrapper
+
+    def persist(self, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            return_value = func(*args, **kwargs)
+            self.cache.insert({'args': args, 'kwargs': kwargs, 'return_value': return_value, 'timestamp': datetime.datetime.now()})
+            return return_value
         return wrapper
