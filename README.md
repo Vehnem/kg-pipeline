@@ -37,6 +37,9 @@ poetry run pytest -s kg_tests/test_final_experiment.py -k test_final
 streamlit run kg_ui/execute.py
 ```
 
+**Final results**
+https://akswnc7.informatik.uni-leipzig.de/~mhofer/paper_supplements/eswc24/kgc/
+
 ## Config.yaml
 
 see [config.yaml](./config.yaml)
