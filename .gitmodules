@@ -1,0 +1,3 @@
+[submodule "kg-tools"]
+	path = kg-tools
+	url = https://github.com/Vehnem/kg-tools
