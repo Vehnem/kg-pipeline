@@ -11,4 +11,4 @@ trait DataFormat {
 }
 
 
-class RDF extends DataFormat
+//class RDF extends DataFormat

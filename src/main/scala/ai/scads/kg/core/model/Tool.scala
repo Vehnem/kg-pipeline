@@ -45,19 +45,19 @@ trait Data {
  * Json, XML, HTML
  * NTriples, Turtle, NQuads
  */
-trait DataFormat {
-
-  /**
-   * A grouping data class
-   * like "NESTED" for XML, JSON, YAML
-   * or like "RDF" for NTriples, NQuads
-   * or like "Tabular" for CSV, TSV, SQL
-   */
-  type ClassType = String
-  type MimeType = String
-
-  val `classes` : List[ClassType]
-  val mimeType: MimeType
-}
+//trait DataFormat {
+//
+//  /**
+//   * A grouping data class
+//   * like "NESTED" for XML, JSON, YAML
+//   * or like "RDF" for NTriples, NQuads
+//   * or like "Tabular" for CSV, TSV, SQL
+//   */
+//  type ClassType = String
+//  type MimeType = String
+//
+//  val `classes` : List[ClassType]
+//  val mimeType: MimeType
+//}
 
 
