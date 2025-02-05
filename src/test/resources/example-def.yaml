@@ -1,0 +1,10 @@
+name: BashGrep
+type: .Extraction
+entry: /usr/bin/graph
+consumes:
+  flow: batch
+  format: .Text
+produces:
+  flow: batch
+  format: .Text
+

@@ -6,39 +6,29 @@ package ai.scads.kg.core.model
  * A tool is used to execute a specific process that is required for knowledge graph integration
  * Like: Extraction, Matching, Mapping, Fusion, Completion
  */
-trait Tool {
+//trait Tool {
+//
+//  private type ConfigType = String
+//
+//  val config: ConfigType
+////  val io: IOType
+//
+//  // TODO can be hierarchically
+//  type Category = String
+//  val category: Category
+//
+//}
 
-  private type ConfigType = String
+//trait IOType {
+//
+//  type FlowType = String
+//
+//  val flow: FlowType
+//  val input: List[Data]
+//  val output: List[Data]
+//
+//}
 
-  val config: ConfigType
-  val io: IOType
-
-  // TODO can be hierarchically
-  type Category = String
-  val category: Category
-
-}
-
-trait IOType {
-
-  type FlowType = String
-
-  val flow: FlowType
-  val input: List[Data]
-  val output: List[Data]
-
-}
-
-trait Data {
-
-  /**
-   * Batch or Stream
-   */
-  type FlowType = String
-
-  val format: DataFormat
-  val flowType: FlowType
-}
 
 /**
  * A serialized format

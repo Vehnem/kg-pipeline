@@ -1,0 +1,49 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://example.org/> .
+
+:Data a owl:Class ; rdfs:comment "A data object" .
+
+:flow a owl:DatatypeProperty ; rdfs:domain :Data .
+:class a owl:DatatypeProperty ; rdfs:domain :Data .
+:format a owl:DatatypeProperty ; rdfs:domain :Data .
+
+:Tool a owl:Class ; rdfs:comment "An executable data integration tool" .
+
+:consumes a owl:ObjectProperty ;
+    rdfs:domain :Tool ;
+    rdfs:range :Data .
+
+:produces a owl:ObjectProperty ;
+        rdfs:domain :Tool ;
+        rdfs:range :Data .
+
+:Pipeline a owl:Class ; rdfs:comment "A defined KG integration Pipeline" .
+
+:stages a owl:ObjectProperty ;
+    rdfs:domain :Pipeline ;
+    rdfs:range :Stage .
+
+:Stage a owl:Class ; rdfs:comment "An integration Stage" .
+
+:input a owl:ObjectProperty ;
+    rdfs:domain :Stage ;
+    rdfs:range :StageData .
+
+:output a owl:ObjectProperty ;
+        rdfs:domain :Stage ;
+        rdfs:range :StageData .
+
+:StageData a owl:Class ; rdfs:subClassOf :Data .
+
+:KGSource a owl:Class .
+:KGTarget a owl:Class .
+
+:source a owl:ObjectProperty ;
+    rdfs:domain :Pipeline ;
+    rdfs:range :KGSource .
+
+:target a owl:ObjectProperty ;
+        rdfs:domain :Pipeline ;
+        rdfs:range :KGTarget .
