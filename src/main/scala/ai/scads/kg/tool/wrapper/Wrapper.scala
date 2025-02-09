@@ -2,25 +2,11 @@ package ai.scads.kg.tool.wrapper
 
 import ai.scads.kg.Data
 
+case class Message()
+
 trait Wrapper {
 
-  def execute(config: Any): List[Data]
+  def execute(message: Message): Message
 }
 
-
-class CliWrapper extends Wrapper {
-
-  override def execute(config: Any): List[Data] = {
-
-    List()
-  }
-}
-
-class ApiWrapper {
-
-}
-
-object Wrapper {
-
-}
 

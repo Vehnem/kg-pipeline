@@ -9,12 +9,11 @@ class SubProcessTests extends AnyFunSuite {
 
   test("main subprocesstest") {
     val sub = os.spawn(cmd = ("ls", "-lh", "."))
-    sub.stdout.lines().foreach(println)
+    val len = sub.stdout.lines().length
 
-//    val os = result
-//    println(result.out.)
-//    println(os.proc("ls", "-lh", ".").call().out.chunks.foreach(println))
+  }
 
-    println("lo")
+  test("grep") {
+
   }
 }

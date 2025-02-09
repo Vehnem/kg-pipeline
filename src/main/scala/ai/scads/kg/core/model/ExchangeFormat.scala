@@ -7,5 +7,5 @@ class ExchangeFormat {
 class IOMatchingResult extends ExchangeFormat
 
 class IOMachtPairs extends IOMatchingResult
-class IOSimilarityGraph extends IOSimilarityGraph
+class IOSimilarityGraph extends IOMatchingResult
 class IOBlocks extends IOMatchingResult
