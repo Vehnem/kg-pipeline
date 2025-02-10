@@ -1,0 +1,9 @@
+- openie:
+    label: ""
+    category:
+    input: BATCH[.TEXT]
+    output: BATCH[.OUT_OpenIE]
+
+- mycustombashtool:
+    label: "A custom bash tool"
+    category: "Transformation"

@@ -1,5 +1,18 @@
 package ai.scads.kg.eval
 
-class Eval {
+object Eval {
 
+  // RDF Pipeline Evaluation
+
+  val metrics = List(
+    ""
+  )
+
+  val input = ""
+  val output = ""
+
+  metrics.foreach({
+    metric =>
+
+  })
 }

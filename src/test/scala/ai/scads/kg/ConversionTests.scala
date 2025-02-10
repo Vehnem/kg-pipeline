@@ -7,4 +7,8 @@ class ConversionTests extends AnyFunSuite {
   test("tab <--> json") {
 
   }
+
+  test("openie <--> ExtractDEF") {
+
+  }
 }

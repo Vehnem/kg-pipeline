@@ -20,12 +20,12 @@ object Utils {
     }
   }
 
-//  implicit class JsonParser(val string: String) {
-//    def fromJson[T](implicit m: Manifest[T]): T = {
-//      mapper.readValue(string, new TypeReference[T] {
-//        override def getType = m.runtimeClass
-//      })
-//    }
-//  }
+  implicit class JsonParser(val string: String) {
+    def fromJson[T](implicit m: Manifest[T]): T = {
+      mapper.readValue(string, new TypeReference[T] {
+        override def getType = m.runtimeClass
+      })
+    }
+  }
 }
 

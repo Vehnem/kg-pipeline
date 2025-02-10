@@ -1,0 +1,109 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.org/schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:CLI_Command
+    a rdfs:Class .
+
+ex:CLI_Example
+    a rdfs:Class .
+
+ex:CLI_Option
+    a rdfs:Class .
+
+ex:CLI_Output
+    a rdfs:Class .
+
+ex:CLI_Parameter
+    a rdfs:Class .
+
+ex:CLI_Tool
+    a rdfs:Class .
+
+ex:Git
+    ex:description "Distributed version control system" ;
+    ex:hasCommand ex:GitCommitCommand ;
+    ex:name "Git" ;
+    a ex:CLI_Tool .
+
+ex:GitCommitAllOption
+    ex:description "Automatically stage files that have been modified/deleted" ;
+    ex:isOptional "true" ;
+    ex:longFlag "--all" ;
+    ex:shortFlag "-a" ;
+    a ex:CLI_Option .
+
+ex:GitCommitCommand
+    ex:description "Record changes to the repository" ;
+    ex:hasExample ex:GitCommitExample ;
+    ex:hasOption ex:GitCommitAllOption ;
+    ex:hasOutput ex:GitCommitOutput ;
+    ex:hasParameter ex:GitCommitMessage ;
+    ex:name "commit" ;
+    a ex:CLI_Command .
+
+ex:GitCommitExample
+    ex:exampleCommand "git commit -a -m 'Fixed bug #42'" ;
+    ex:exampleOutput "Files changed: 2, Insertions: 10, Deletions: 2" ;
+    a ex:CLI_Example .
+
+ex:GitCommitMessage
+    ex:description "Commit message describing the change" ;
+    ex:isOptional "false" ;
+    ex:name "message" ;
+    ex:paramType "String" ;
+    a ex:CLI_Parameter .
+
+ex:GitCommitOutput
+    ex:description "Outputs a short summary of the commit" ;
+    ex:exitCodes "0: success, 1: error" ;
+    a ex:CLI_Output .
+
+ex:defaultValue
+    a rdfs:Property .
+
+ex:description
+    a rdfs:Property .
+
+ex:exampleCommand
+    a rdfs:Property .
+
+ex:exampleOutput
+    a rdfs:Property .
+
+ex:exitCodes
+    a rdfs:Property .
+
+ex:hasCommand
+    a rdfs:Property .
+
+ex:hasExample
+    a rdfs:Property .
+
+ex:hasOption
+    a rdfs:Property .
+
+ex:hasOutput
+    a rdfs:Property .
+
+ex:hasParameter
+    a rdfs:Property .
+
+ex:hasSubcommand
+    a rdfs:Property .
+
+ex:isOptional
+    a rdfs:Property .
+
+ex:longFlag
+    a rdfs:Property .
+
+ex:name
+    a rdfs:Property .
+
+ex:paramType
+    a rdfs:Property .
+
+ex:shortFlag
+    a rdfs:Property .

@@ -1,0 +1,27 @@
+ ┌───────────────┐        ┌─────────────────┐
+ │  CLI_Tool     │        │  CLI_Command    │
+ │-------------- │        │-----------------│
+ │+ name         │        │+ name           │
+ │+ version      │        │+ description    │
+ │+ ...          │        │+ usageString    │
+ └─────┬─────────┘        └────────┬────────┘
+       │(hasCommand)               │(hasParameter)
+       │                           └──────┬───────────────┐
+       │                                  │               │
+       │                                  ▼               ▼
+       │                         ┌───────────────┐   ┌─────────────┐
+       │                         │  CLI_Parameter│   │  CLI_Option │
+       │                         │---------------│   │-------------│
+       │                         │+ name         │   │+ shortFlag  │
+       │                         │+ paramType    │   │+ longFlag   │
+       │                         │+ description  │   │+ defaultVal │
+       │                         │+ isOptional   │   │+ isRequired │
+       │                         └───────────────┘   └─────────────┘
+       │
+       │(hasExample)                 ┌───────────────┐
+       └───────────────────────────► │ CLI_Example   │
+                                     │---------------│
+                                     │+ commandText  │
+                                     │+ description  │
+                                     │+ exampleOutput│
+                                     └───────────────┘

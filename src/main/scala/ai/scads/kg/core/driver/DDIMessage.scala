@@ -1,6 +1,9 @@
-package ai.scads.kg.core.model
+package ai.scads.kg.core.driver
 
-class DDIMessage {
+abstract class DDIMessage extends Serializable {
+
+  val input: String
+  val output: String
 
   // is a graph itself
   // contains a relevant infomrations is extensible
