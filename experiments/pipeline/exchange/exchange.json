@@ -1,0 +1,106 @@
+{
+  "document_id": "doc-123",
+  "metadata": {
+    "source": "newswire",
+    "author": "John Doe",
+    "timestamp": "2025-01-10T09:30:00Z"
+  },
+  "text": "Acme Corp. is headquartered in New York. John Smith is the CEO of Acme Corp.",
+
+  "information_extraction": {
+    "NER": [
+      {
+        "mention_id": "m1",
+        "text": "Acme Corp.",
+        "start_char": 0,
+        "end_char": 10,
+        "label": "ORG",
+        "confidence": 0.98
+      },
+      {
+        "mention_id": "m2",
+        "text": "New York",
+        "start_char": 28,
+        "end_char": 36,
+        "label": "LOCATION",
+        "confidence": 0.93
+      },
+      {
+        "mention_id": "m3",
+        "text": "John Smith",
+        "start_char": 38,
+        "end_char": 48,
+        "label": "PERSON",
+        "confidence": 0.95
+      }
+    ],
+    "NEL": [
+      {
+        "mention_id": "m1",
+        "kb_id": "http://example.org/kb/AcmeCorp",
+        "confidence": 0.85
+      },
+      {
+        "mention_id": "m3",
+        "kb_id": "http://example.org/kb/JohnSmith",
+        "confidence": 0.90
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "r1",
+        "type": "Employment",
+        "arg1_mention_id": "m3",
+        "arg2_mention_id": "m1",
+        "confidence": 0.88
+      }
+    ],
+    "coreference": {
+      "clusters": [
+        {
+          "cluster_id": "c1",
+          "mention_ids": ["m1", "m4"],
+          "description": "All references to 'Acme Corp.' in this document"
+        }
+      ]
+    }
+  },
+
+  "entity_resolution": {
+    "blocking": [
+      {
+        "block_id": "b1",
+        "record_ids": ["record-11", "record-25", "record-52"],
+        "block_key": "Acme"
+      }
+    ],
+    "matches": [
+      {
+        "pair_id": "match1",
+        "record_id_1": "record-11",
+        "record_id_2": "record-25",
+        "match_score": 0.92,
+        "features": {
+          "name_similarity": 0.9,
+          "address_overlap": 0.5
+        }
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_id": "cl1",
+        "member_record_ids": ["record-11", "record-25"]
+      }
+    ],
+    "fusions": [
+      {
+        "cluster_id": "cl1",
+        "fused_record": {
+          "name": "Acme Corporation",
+          "address": "Some Street, New York",
+          "phone": "+1-555-1234"
+        }
+      }
+    ]
+  }
+}

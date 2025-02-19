@@ -5,6 +5,7 @@ object Eval {
   // RDF Pipeline Evaluation
 
   val metrics = List(
+    "COVERAGE",
     ""
   )
 
@@ -15,4 +16,8 @@ object Eval {
     metric =>
 
   })
+}
+
+class EvalFactory {
+
 }

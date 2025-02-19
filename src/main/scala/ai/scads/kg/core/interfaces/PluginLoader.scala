@@ -1,4 +1,4 @@
-package ai.scads.kg.core.plugins
+package ai.scads.kg.core.interfaces
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule

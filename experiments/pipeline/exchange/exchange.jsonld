@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "ie": "http://example.org/ontology/ie#",
+    "er": "http://example.org/ontology/er#",
+    "mentions": "ie:mentions",
+    "entities": "ie:entities",
+    "relations": "ie:relations",
+    "coreference": "ie:coreference",
+    "blocks": "er:blocks",
+    "matches": "er:matches",
+    "clusters": "er:clusters",
+    "fusions": "er:fusions"
+  },
+  "@type": "ie:Document",
+  "schema:identifier": "doc-123",
+  "schema:dateCreated": "2025-01-10T09:30:00Z",
+  "schema:text": "Acme Corp. is headquartered in New York. John Smith is the CEO of Acme Corp.",
+
+  "ie:mentions": [
+    {
+      "@id": "ie:mention_m1",
+      "ie:mentionText": "Acme Corp.",
+      "ie:startChar": 0,
+      "ie:endChar": 10,
+      "ie:entityLabel": "ORG",
+      "ie:confidence": 0.98
+    },
+    {
+      "@id": "ie:mention_m2",
+      "ie:mentionText": "New York",
+      "ie:startChar": 28,
+      "ie:endChar": 36,
+      "ie:entityLabel": "LOCATION",
+      "ie:confidence": 0.93
+    }
+    // ... etc.
+  ],
+
+  "ie:entities": [
+    {
+      "@id": "ie:entity_m1",
+      "ie:linkedMention": "ie:mention_m1",
+      "ie:kbURI": "http://example.org/kb/AcmeCorp",
+      "ie:linkConfidence": 0.85
+    }
+    // ...
+  ],
+
+  "ie:relations": [
+    {
+      "@id": "ie:relation_r1",
+      "ie:relationType": "Employment",
+      "ie:arg1": "ie:mention_m3",
+      "ie:arg2": "ie:mention_m1",
+      "ie:confidence": 0.88
+    }
+  ],
+
+  "ie:coreference": {
+    "@id": "ie:coref_doc123",
+    "ie:clusters": [
+      {
+        "@id": "ie:coref_cluster_c1",
+        "ie:mentionRefs": ["ie:mention_m1", "ie:mention_m4"]
+      }
+    ]
+  },
+
+  "er:blocks": [
+    {
+      "@id": "er:block_b1",
+      "er:blockKey": "Acme",
+      "er:blockRecordIDs": ["record-11", "record-25", "record-52"]
+    }
+  ],
+  "er:matches": [
+    {
+      "@id": "er:match_m1",
+      "er:recordID1": "record-11",
+      "er:recordID2": "record-25",
+      "er:matchScore": 0.92
+    }
+  ],
+  "er:clusters": [
+    {
+      "@id": "er:cluster_cl1",
+      "er:memberRecordIDs": ["record-11", "record-25"]
+    }
+  ],
+  "er:fusions": [
+    {
+      "@id": "er:fusion_cl1",
+      "er:clusterID": "er:cluster_cl1",
+      "er:fusedRecord": {
+        "er:name": "Acme Corporation",
+        "er:address": "Some Street, New York",
+        "er:phone": "+1-555-1234"
+      }
+    }
+  ]
+}
