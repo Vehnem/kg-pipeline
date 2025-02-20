@@ -90,8 +90,6 @@
             <artifactId>jena-core</artifactId>
             <version>4.10.0</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -105,6 +103,21 @@
             <artifactId>scalatest_${scala.compat.version}</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>ch.qos.logback</groupId>-->
+<!--            <artifactId>logback-core</artifactId>-->
+<!--            <version>1.5.11</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.7</version> <!-- Match Spring Boot 3.x -->
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -117,30 +130,6 @@
                 <version>${spring.version}</version>
             </dependency>
 
-
-            <!--            <dependency>-->
-            <!--                <groupId>org.dbpedia.databus-mods</groupId>-->
-            <!--                <artifactId>databus-mods-core</artifactId>-->
-            <!--                <version>${project.version}</version>-->
-            <!--            </dependency>-->
-
-            <!--            &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.derby/derby &ndash;&gt;-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.apache.derby</groupId>-->
-            <!--                <artifactId>derby</artifactId>-->
-            <!--                <version>10.14.2.0</version>-->
-            <!--            </dependency>-->
-
-            <!--
-            BEGIN This is from mods pom.xml
-            -->
-            <!-- https://mvnrepository.com/artifact/org.apache.any23/apache-any23-mime -->
-            <!--            <dependency>-->
-            <!--                <groupId>org.apache.any23</groupId>-->
-            <!--                <artifactId>apache-any23-mime</artifactId>-->
-            <!--                <version>2.3</version>-->
-            <!--            </dependency>-->
-            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-compress</artifactId>
@@ -195,12 +184,12 @@
                 <!--                    <artifactId>spring-boot-starter-logging</artifactId>-->
                 <!--                </exclusion>-->
                 <!--            </exclusions>-->
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.logging.log4j</groupId>
-                        <artifactId>log4j-to-slf4j</artifactId>
-                    </exclusion>
-                </exclusions>
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <groupId>org.apache.logging.log4j</groupId>-->
+<!--                        <artifactId>log4j-to-slf4j</artifactId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
             </dependency>
             <!--            <dependency>-->
             <!--                <groupId>org.springframework.boot</groupId>-->
@@ -225,6 +214,13 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
 
             <!-- API Doc -->
             <!--            <dependency>-->

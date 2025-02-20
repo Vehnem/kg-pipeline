@@ -1,5 +1,9 @@
 package ai.scads.kg.tool.wrapper
 
-class MessageTemplate {
-  // TODO
+trait MessageTemplate {
+
+  val input: String
+  val output: String
+  val config: String
+
 }

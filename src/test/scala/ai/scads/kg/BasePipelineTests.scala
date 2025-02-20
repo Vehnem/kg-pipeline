@@ -19,7 +19,7 @@ class BasePipelineTests extends AnyFunSuite {
    */
 
   object Ops {
-    implicit class PiplineOps(array: Array[ExchangeFormat]) {
+    implicit class PipelineOps(array: Array[ExchangeFormat]) {
 
       def agg(f: String => String): KG = {
         array.map(ex => f.apply(ex.meta)).mkString
