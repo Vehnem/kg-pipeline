@@ -1,0 +1,23 @@
+BASE <http://vehnem.github.io/kgm/>
+PREFIX : <http://vehnem.github.io/kgm/>
+PREFIX impl:  <http://vehnem.github.io/impl>
+
+impl:OpenIE a :Tool ;
+  :category "IE", "NER" ;
+  :consumes "text/plain" ;
+  :produces "exchange/ie" .
+
+impl:Falcon2 a :Tool ;
+  :consumes "text/plain" ;
+  :produces "exchange/ie" .
+
+impl:IEAggregator a :Tool ;
+  :category "DM" ;
+  :consumes "exchange/ie"  ;
+  :produces "application/n-triples" .
+
+impl:Paris a :Tool ;
+   :category "ER", "MATCH" ;
+   :consumes "application/n-triples" ;
+   :produces "application/n-triples" .
+
