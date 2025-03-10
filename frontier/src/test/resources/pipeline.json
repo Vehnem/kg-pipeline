@@ -1,0 +1,14 @@
+{
+  "input": "/workspace/data/kgflex/input/text/",
+  "dataDir": "/workspace/data/kgflex/share/",
+  "output": "/workspace/data/kgflex/output/test/",
+  "stages": [
+    {
+      "process": "InformationExtraction"
+    },
+    { "process": "DataCleaning"},
+    {
+      "process": "EntityResolution"
+    }
+  ]
+}

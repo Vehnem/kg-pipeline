@@ -10,10 +10,10 @@
     <!--    </parent>-->
 
     <groupId>ai.scads.kg</groupId>
-    <artifactId>main</artifactId>
+    <artifactId>flex</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Databus-Mods Parent</name>
-    <packaging>jar</packaging>
+    <name>KG Flex Framework</name>
+    <packaging>pom</packaging>
 
     <properties>
         <encoding>UTF-8</encoding>
@@ -39,10 +39,11 @@
         <!--        <maven.plugin.tools.version>3.6.0</maven.plugin.tools.version>-->
     </properties>
 
-    <!--    <modules>-->
-    <!--        <module>databus-mods-lib</module>-->
-    <!--        <module>databus-mods-server</module>-->
-    <!--    </modules>-->
+        <modules>
+            <module>core</module>
+            <module>tool</module>
+            <module>frontier</module>
+        </modules>
 
     <dependencies>
 
@@ -282,7 +283,25 @@
                 <version>${scalatest.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-core</artifactId>
+                <version>4.10.0</version>
+            </dependency>
 
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-arq</artifactId>
+                <version>4.10.0</version>
+
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-tdb2</artifactId>
+                <version>4.10.0</version>
+
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -297,10 +316,10 @@
         <!--            <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>-->
         <!--            <url>http://repository.springsource.com/maven/bundles/external</url>-->
         <!--        </repository>-->
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://www.jitpack.io</url>
-        </repository>
+<!--        <repository>-->
+<!--            <id>jitpack.io</id>-->
+<!--            <url>https://www.jitpack.io</url>-->
+<!--        </repository>-->
         <repository>
             <id>sonatype-releases</id>
             <url>https://oss.sonatype.org/service/local/repositories/releases/content/</url>
@@ -318,8 +337,8 @@
     </repositories>
 
     <build>
-        <sourceDirectory>src/main/scala</sourceDirectory>
-        <testSourceDirectory>src/test/scala</testSourceDirectory>
+<!--        <sourceDirectory>src.bak2/src/main/scala</sourceDirectory>-->
+<!--        <testSourceDirectory>src.bak2/src/test/scala</testSourceDirectory>-->
         <plugins>
             <!--            <plugin>-->
             <!--                <artifactId>maven-deploy-plugin</artifactId>-->

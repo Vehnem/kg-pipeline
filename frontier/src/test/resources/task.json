@@ -1,0 +1,9 @@
+{
+  "task": "EntityResolution",
+  "accept": "EntityResolutionOut",
+  "input": {
+    "format": "",
+    "flow": "batch",
+    "location": "foo/bar"
+  }
+}
