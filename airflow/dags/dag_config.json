@@ -1,0 +1,20 @@
+{
+  "nodes": [
+    "Cleaning",
+    "Error_Detection_with_CustomImpl",
+    "Error_Removal_with_MyTool"
+  ],
+  "edges": [
+    [
+      "Cleaning",
+      "Error_Detection_with_CustomImpl"
+    ],
+    [
+      "Error_Detection_with_CustomImpl",
+      "Error_Removal_with_MyTool"
+    ]
+  ],
+  "metadata": {
+    "description": "A sample DAG from RAW to CLEANED_DATA"
+  }
+}
